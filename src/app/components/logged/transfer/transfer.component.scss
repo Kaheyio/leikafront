@@ -1,0 +1,32 @@
+// ******************TRANSFER COMPONENT *******************************************************************
+.offcanvas{
+    width: 100vw;
+}
+#moveshistory{
+    margin: 0 auto;
+    
+}
+#moveshistorycards{
+    overflow-y: scroll;
+}
+.lulumovecard{
+    text-decoration: none;
+    color: black;
+    max-height: 90px;
+    
+    font-size: 0.7rem;
+    border-left: 1px solid var(--lulugrey4);
+}
+.lulumovecard div{
+    border-radius: 3px;
+}
+.lulumovecard-amount{
+    font-size: 0.8rem;
+}
+.lulumovecard-title{
+    font-size: 0.9rem;
+}
+
+#luluoverflow{
+    overflow-y: scroll;
+}
