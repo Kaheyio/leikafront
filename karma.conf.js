@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/angu8leika'),
+      dir: require('path').join(__dirname, './coverage/leikafront'),
       subdir: '.',
       reporters: [
         { type: 'html' },
