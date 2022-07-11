@@ -19,13 +19,15 @@ export class AuthGuardService {
     private crudService: CrudService,
     private dataService: DataService
   ) {
+    this.checkLoggedState();
+  }
 
+  // CHECK LOGGED STATE AND PROTECT LOGGED COMPONENTS
+  checkLoggedState(){
     // check that session storage is not empty and token is valid ( = logged components are protected)
-
     this.crudService.getTypeRequest('/auth/protected/logged').subscribe(res => {
 
 
-      // TODO: PB = you have to reload the page for it to work + if you duplicate tab session storage is ok ?
       // if status = false, not allowed
       let accessAuthorized = Object.values(res)[0];
       // console.log('Status of authorization: ' + accessAuthorized);
@@ -65,15 +67,14 @@ export class AuthGuardService {
       this.setLoggedOutState(false);
 
     });
-
   }
+
 
 
   // FOR TESTS
   getLoggedIn(){
     return this.isLoggedIn;
   }
-
   getLoggedOut(){
     return this.isLoggedOut;
   }
