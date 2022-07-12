@@ -1,5 +1,4 @@
- <!-- ng if either display logged in or logged out -->
-    <app-login></app-login>
-    <!-- *ngIf="loggedOutState" -->
-    <app-logged></app-logged>
-    <!-- *ngIf="loggedInState" -->
+<!-- ng if either display logged in or logged out -->
+<app-login *ngIf="loggedOutState"></app-login>
+
+<app-logged *ngIf="loggedInState"></app-logged>
