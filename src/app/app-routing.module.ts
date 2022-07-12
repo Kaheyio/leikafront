@@ -6,13 +6,13 @@ import { MainComponent } from './components/main/main.component';
 import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
-  { path: 'main', component: MainComponent},
+  { path: '', component: MainComponent},
   // { path: 'login', component: LoginComponent},
   // { path: 'logged', canActivate: [AuthGuardService], component: LoggedComponent},
   // CAREFUL, the following not found ** redirect is a wildcard and should always be put last otherwise the routes that come after it will not be set up 
   // and ** will intercept and redirect to not found because it has no clue nor patience to see if there are any other retardataire routes after it
   // Redirect to login instead of not-found
-  {path: '**', redirectTo: '/main'}
+  {path: '**', redirectTo: '/'}
 ];
 
 @NgModule({
