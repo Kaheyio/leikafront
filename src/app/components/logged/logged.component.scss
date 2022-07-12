@@ -1,59 +1,18 @@
-///////////////////////////// Basic layout
-#luluwrapper-whole{
-  background-color: var(--lulubgblack);
-}
-
-#luluwrapper-top {
-  height: 9%; //used to be 8%
-}
-
-#luluwrapper-center {
-  height: 82%;
-}
-
-#luluwrapper-bottom {
-  height: 9%; // used to be 10%
-}
-
-///////////////////////////// Top nav
-/// 
-#lulutopnav{
-  background-color: #1a1e21;
-}
-#lulutopnav button {
-  //overrides bootstrap active states
-  color: var(--lulugold1);
-}
-
-///////////////////////////// Bottom nav
-#lulubottomnav{
-  background-color: #1a1e21;
-}
-#lulubottomnav li {
-  width: 33%;
-}
-
-#lulubottomnav button {
-  color: var(--lulugold1);
-}
 
 #lulubottomnav .nav-link.active {
-  //overrides #lulubottomnavbutton
-  background-color: var(--lulugrey3);
-  color: black;
+  background-color: var(--lulubg2);
+  color: var(--lulugold) !important;
+  border-radius: 7px !important;
 }
 
-.nav-link,
-.nav-link.active {
-  border-radius: 0px;
-}
-
-// CHAT OFFCANVAS
 #chat-canvas {
   height: fit-content; //maybe 91%if you prefer
 }
 
-// ************************ //
+
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
 // TEST LEILA = Animation for page reload after login
 
 // @keyframes fadeIn {

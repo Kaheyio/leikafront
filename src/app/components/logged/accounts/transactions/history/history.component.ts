@@ -63,6 +63,12 @@ export class HistoryComponent implements OnInit {
   sortedhistory = this.historytransactions.sort((x: any, y: any) => {
     return x.sumbissiontimestamp - y.sumbissiontimestamp;
   })
+  sortedhistory2 = this.historytransactions.sort((x: any, y: any) => {
+    return x.sumbissiontimestamp - y.sumbissiontimestamp;
+  })
+  sortedhistory3 = this.historytransactions.sort((x: any, y: any) => {
+    return x.sumbissiontimestamp - y.sumbissiontimestamp;
+  })
 
   constructor() { }
 

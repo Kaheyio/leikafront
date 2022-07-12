@@ -1,14 +1,15 @@
-<div class="luluw100 luluh100 luluultrablack d-flex flex-column align-items-center justify-content-center">
+<div class="luluultrablack w-100 h-100 d-flex flex-column align-items-center justify-content-center">
 
   <img src="../../../assets/logohoriz.png" class="img-fluid rounded mb-5" alt="leika logo" width="180" height="auto">
 
   <h1 class="mb-3 lulugreytxt">Log in</h1>
 
   <!-- Error message -->
-  <div class="luluw100 my-1 text-center text-danger fw-bold" *ngIf="errorState">
+  <div class="w-100 my-1 text-center text-danger fw-bold" *ngIf="errorState">
     {{ errorMessage }}
   </div>
 
+  <!-- TODO get rid of blue outline -->
   <!-- Inputs -->
   <div class="p-4 d-flex flex-column align-items-center justify-content-center" id="lululogin-formwrapper">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
@@ -19,26 +20,21 @@
         <label for="loginmail">Email address</label>
       </div>
 
-      <!-- password group -->
-
+      <!-- Password-->
       <div class="input-group my-1">
-        <div class="form-floating">
-          <input type="password" class="form-control" id="loginpassword" aria-label="Text input with checkbox"
-            placeholder="Password" name="password" formControlName="password" #togglePassword>
-          <label for="loginpasswoard">Password</label>
+        <div class="form-floating lulubg lulupilltest">
+          <input type="password" class="form-control lulupilltest" id="loginpassword" aria-label="Text input with checkbox"
+            placeholder="Password lulupilltest" name="password" formControlName="password" #togglePassword>
+          <label for="loginpassword">Password</label>
         </div>
-        <div class="input-group-text" (click)="togglePW()">
+        <!-- TODO put it inside-->
+        <div class="lulubg lulugreytxt input-group-text border-0" (click)="togglePW()">
           <i *ngIf="passwordShow" class="fa-solid fa-eye-slash"></i>
           <i *ngIf="!passwordShow" class="fa-solid fa-eye"></i>
         </div>
       </div>
-      <!-- <div class="checkbox my-1 text-center">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div> -->
 
-      <button class="w-100 mt-2 btn btn-lg bg-dark text-white" type="submit">Sign in</button>
+      <button class="lulubg w-100 mt-2 btn btn-lg text-white" type="submit">Sign in</button>
       <p class="lulusignaturetxt mt-5 mb-3 text-center">&copy; 2022, Leika Corp</p>
     </form>
   </div>
