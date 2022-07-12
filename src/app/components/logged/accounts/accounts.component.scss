@@ -7,8 +7,10 @@
     color: var(--lulugrey4);
 }
 #lulusectionpicker .nav-link.active {
-    background-color: var(--lulugrey3);
+    background-color: inherit;
     color: black;
+    border-radius: 0px;
+    border-bottom: 1px solid black;
 }
 
 //////////////////// Section displayer

@@ -1,26 +1,24 @@
-<div class="luluh100 luluw100" id="luluwrapper-whole">
+<!-- MAYBE DELETE THAT -->
+<div class="h-100 w-100" id="luluwrapper-whole">
 
-  <!-- TODO: TEST IN NAVBAR LEILA -->
-  <div id="luluwrapper-top">
+  <div class="luluh9" id="luluwrapper-top">
     <!-- Top navbar -->
-    <!-- <ul class="luluh100 nav bg-dark justify-content-start d-flex flex-row luluscrollx luluscrolly" id="lulutopnav"> -->
-    <ul class="luluh100 nav bg-dark justify-content-end d-flex flex-row luluscrollx luluscrolly" id="lulutopnav">
-      <!-- Logo -->
-      <!-- <li class="luluh100 p-1 nav-item me-auto">
-        <img class="luluh100 img-fluid" src="../assets/logohoriz.png" alt="leika logo">
-      </li> -->
-      
+    <ul class="luluultrablack h-100 nav justify-content-end d-flex flex-row luluscrollx luluscrolly" id="lulutopnav">
 
-      <li class="nav-item my-auto">
-        <span class="text-white fw-bold mx-2">Welcome {{ userData.username }}</span>
-        <span class="text-white fw-bold mx-2">Your Leikode: {{ userLeikode }}</span>
+      <!-- LOGO -->
+      <li class="h-100 p-1 nav-item">
+        <img class="h-100 rounded" src="../assets/logohoriz.png" alt="leika logo">
       </li>
-      <!-- END TEST -->
 
-      <!-- Chat icon -->
+      <!-- LEIKODE -->
+      <li class="nav-item me-auto my-auto" *ngIf="userLeikode">
+        <span class="p-1 mx-2 bg-primary fw-bold">{{ userLeikode }}</span>
+      </li>
+
+      <!-- CHAT -->
       <li class="nav-item my-auto">
         <!-- CHAT Offcanvas button -->
-        <button class="btn bg-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#chat-canvas"
+        <button class="lulugoldbtn btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#chat-canvas"
           aria-controls="chat-canvas"><i class="fa-brands fa-rocketchat"></i></button>
         <!-- CHAT Offcanvas title/label + content -->
         <div class="offcanvas offcanvas-bottom" tabindex="-1" id="chat-canvas" aria-labelledby="chat-canvasLabel">
@@ -34,57 +32,60 @@
         </div>
       </li>
 
-      <!-- Logout icon -->
+      <!-- LOGOUT -->
       <li class="nav-item my-auto">
-        <button class="btn bg-dark" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i></button>
+        <button class="lulugoldbtn btn" (click)="logout()">{{ userData.username }} <i
+            class="fa-solid fa-right-from-bracket"></i></button>
       </li>
+
     </ul>
+    <!-- end of topnavbar -->
   </div>
 
-  <div id="luluwrapper-center">
+  <div class="luluh82 luluclear" id="luluwrapper-center">
     <!-- Tab Displayer -->
-    <div class="luluh100 tab-content">
+    <div class="h-100 tab-content">
       <!-- Accounts tab -->
-      <div class="luluh100 tab-pane fade show active" id="accountcomponent-displayer" role="tabpanel"
+      <div class="h-100 tab-pane fade show active" id="accountcomponent-displayer" role="tabpanel"
         aria-labelledby="accountcomponent-btn" tabindex="0">
         <app-accounts></app-accounts>
       </div>
       <!-- Transfer tab -->
-      <div class="luluh100 tab-pane fade " id="transfercomponent-displayer" role="tabpanel"
+      <div class="h-100 tab-pane fade " id="transfercomponent-displayer" role="tabpanel"
         aria-labelledby="transfercomponent-btn" tabindex="0">
         <app-transfer></app-transfer>
       </div>
       <!-- Manage tab -->
-      <div class="luluh100 tab-pane fade " id="managecomponent-displayer" role="tabpanel"
+      <div class="h-100 tab-pane fade " id="managecomponent-displayer" role="tabpanel"
         aria-labelledby="managecomponent-btn" tabindex="0">
         <app-manage></app-manage>
       </div>
     </div>
   </div>
 
-  <div id="luluwrapper-bottom">
+  <div class="luluh9" id="luluwrapper-bottom">
     <!-- Bottom navbar -->
-    <ul class="luluh100 nav nav-pills bg-dark d-flex flex-row justify-content-center align-items-center py-1"
+    <ul class="luluultrablack h-100 px-1 py-2 nav nav-pills d-flex flex-row justify-content-center align-items-center"
       id="lulubottomnav" role="tablist">
       <!-- Accounts btn -->
-      <li class="luluh100 nav-item d-flex flex-column justify-content-center" role="presentation">
-        <button class="luluh100 nav-link d-flex flex-column align-items-center justify-content-evenly active"
+      <li class="luluw33 h-100 nav-item d-flex flex-column justify-content-center" role="presentation">
+        <button class="lulugreytxt h-100 nav-link d-flex flex-column align-items-center justify-content-evenly active"
           id="accountcomponent-btn" data-bs-toggle="pill" data-bs-target="#accountcomponent-displayer" type="button"
           role="tab" aria-controls="accountcomponent-displayer" aria-selected="true">
-          <i class="my-1 fa-solid fa-xl fa-receipt"></i>
+          <i class="my-1 fa-solid fa-xl fa-chart-simple"></i>
         </button>
       </li>
       <!-- Transfers btn -->
-      <li class="luluh100 nav-item d-flex flex-column justify-content-center" role="presentation">
-        <button class="luluh100 nav-link d-flex flex-column align-items-center justify-content-evenly"
+      <li class="luluw33 h-100 nav-item d-flex flex-column justify-content-center" role="presentation">
+        <button class="lulugreytxt h-100 nav-link d-flex flex-column align-items-center justify-content-evenly"
           id="transfercomponent-btn" data-bs-toggle="pill" data-bs-target="#transfercomponent-displayer" type="button"
           role="tab" aria-controls="transfercomponent-displayer" aria-selected="false">
-          <i class="my-1 fa-solid fa-xl fa-money-bill-transfer"></i>
+          <i class="fs-4 fa-solid fa-arrow-right-arrow-left"></i>
         </button>
       </li>
       <!-- Manage btn -->
-      <li class="luluh100 nav-item d-flex flex-column justify-content-center" role="presentation">
-        <button class="luluh100 nav-link d-flex flex-column align-items-center justify-content-evenly"
+      <li class="luluw33 h-100 nav-item d-flex flex-column justify-content-center" role="presentation">
+        <button class="lulugreytxt h-100 nav-link d-flex flex-column align-items-center justify-content-evenly"
           id="managecomponent-btn" data-bs-toggle="pill" data-bs-target="#managecomponent-displayer" type="button"
           role="tab" aria-controls="managecomponent-displayer" aria-selected="false">
           <i class="my-1 fa-solid fa-xl fa-ellipsis"></i>
@@ -109,4 +110,5 @@
       </div>
     </div>
   </div> -->
+
 </div>

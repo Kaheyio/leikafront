@@ -7,7 +7,16 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 // ******************STYLES REFS*******************************************************************
+
+
 :root{
+    --luluultrablack: #1a1e21;
+    --lulubg: #212529;
+    --lulubg2: #393d42;
+    --luluclear: #fbfdff;
+    --lulugrey: #C3C0C0ff;
+    --lulugold: rgb(224, 182, 66);
+
     --lulublack: #141414ff;
     --lulublack2: #242424ff;
     
@@ -32,6 +41,55 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --lulugreen: rgb(199, 248, 187);
 }
 
+.lulugrey{
+    background-color: var(--lulugrey);
+}
+.lulubg{
+    background-color: var(--lulubg);
+}
+.luluclear{
+    background-color: var(--luluclear);
+}
+.luluultrablack{
+    background-color: var(--luluultrablack);
+}
+
+.lulugreytxt{
+    color: var(--lulugrey) !important;
+}
+.lulubgtxt{
+    color: var(--lulubg) !important;
+}
+.luluultrablacktxt{
+    color: var(--luluultrablack);
+}
+.lulusignaturetxt{
+    color: var(--lulugrey4);
+}
+.lulugoldbtn{
+    color: var(--lulugold) !important;
+}
+.lulugoldbg{
+    background-color: var(--lulugold);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a{
     cursor: pointer;
     text-decoration: none;
@@ -39,9 +97,6 @@ a{
 }
 
 // GLOBAL CLASSES
-.luluh100{
-    height: 100%;
-}
 .luluh91{
     height: 91%;
 }
@@ -66,11 +121,14 @@ a{
 .luluh9{
     height: 9%;
 }
-.luluw100{
-    width: 100%;
-}
 .luluw91{
     width: 91%;
+}
+.luluw33{
+    width: 33%;
+}
+.luluw30{
+    width: 30%;
 }
 .luluw9{
     width: 9%;
