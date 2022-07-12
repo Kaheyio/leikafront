@@ -9,7 +9,7 @@ export class CrudService {
 
 
   // backend route prefix (add /users or /auth in components) 
-  baseUrl = 'http://localhost:3000/api';
+  baseUrl = 'https://leikaback.herokuapp.com/api';
 
 
   constructor(private http: HttpClient) { }
