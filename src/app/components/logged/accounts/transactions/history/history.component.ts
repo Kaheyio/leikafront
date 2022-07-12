@@ -67,7 +67,7 @@ export class HistoryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.sortedhistory)
+    console.log("sorted history = " + this.sortedhistory)
   }
 
 }
