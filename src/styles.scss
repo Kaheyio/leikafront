@@ -7,7 +7,13 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 // ******************STYLES REFS*******************************************************************
+
+
 :root{
+    --luluultrablack: #1a1e21;
+    --lulubg: #212529;
+    --lulugrey: #C3C0C0ff;
+
     --lulublack: #141414ff;
     --lulublack2: #242424ff;
     
@@ -31,6 +37,48 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --luluyellow: rgb(249, 255, 170);
     --lulugreen: rgb(199, 248, 187);
 }
+
+.lulugrey{
+    background-color: var(--lulugrey);
+}
+.lulubg{
+    background-color: var(--lulubg)
+}
+.luluultrablack{
+    background-color: var(--luluultrablack);
+}
+
+.lulugreytxt{
+    color: var(--lulugrey);
+}
+.lulubgtxt{
+    color: var(--lulubg)
+}
+.luluultrablacktxt{
+    color: var(--luluultrablack);
+}
+.lulusignaturetxt{
+    color: var(--lulugrey4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 a{
     cursor: pointer;

@@ -4,23 +4,17 @@
   <div id="luluwrapper-top">
     <!-- Top navbar -->
     <!-- <ul class="luluh100 nav bg-dark justify-content-start d-flex flex-row luluscrollx luluscrolly" id="lulutopnav"> -->
-    <ul class="luluh100 nav bg-dark justify-content-end d-flex flex-row luluscrollx luluscrolly" id="lulutopnav">
+    <ul class="luluh100 nav justify-content-end d-flex flex-row luluscrollx luluscrolly" id="lulutopnav">
       <!-- Logo -->
-      <!-- <li class="luluh100 p-1 nav-item me-auto">
+      <li class="luluh100 p-1 nav-item me-auto">
         <img class="luluh100 img-fluid" src="../assets/logohoriz.png" alt="leika logo">
-      </li> -->
-      
-
-      <li class="nav-item my-auto">
-        <span class="text-white fw-bold mx-2">Welcome {{ userData.username }}</span>
-        <span class="text-white fw-bold mx-2">Your Leikode: {{ userLeikode }}</span>
       </li>
       <!-- END TEST -->
 
       <!-- Chat icon -->
       <li class="nav-item my-auto">
         <!-- CHAT Offcanvas button -->
-        <button class="btn bg-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#chat-canvas"
+        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#chat-canvas"
           aria-controls="chat-canvas"><i class="fa-brands fa-rocketchat"></i></button>
         <!-- CHAT Offcanvas title/label + content -->
         <div class="offcanvas offcanvas-bottom" tabindex="-1" id="chat-canvas" aria-labelledby="chat-canvasLabel">
@@ -36,7 +30,12 @@
 
       <!-- Logout icon -->
       <li class="nav-item my-auto">
-        <button class="btn bg-dark" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i></button>
+        <button class="btn" (click)="logout()">{{ userData.username }} <i
+            class="fa-solid fa-right-from-bracket"></i></button>
+      </li>
+
+      <li class="nav-item my-auto">
+        <span class="text-white fw-bold mx-2">{{ userLeikode }}</span>
       </li>
     </ul>
   </div>
@@ -64,8 +63,8 @@
 
   <div id="luluwrapper-bottom">
     <!-- Bottom navbar -->
-    <ul class="luluh100 nav nav-pills bg-dark d-flex flex-row justify-content-center align-items-center py-1"
-      id="lulubottomnav" role="tablist">
+    <ul class="luluh100 nav nav-pills d-flex flex-row justify-content-center align-items-center py-1" id="lulubottomnav"
+      role="tablist">
       <!-- Accounts btn -->
       <li class="luluh100 nav-item d-flex flex-column justify-content-center" role="presentation">
         <button class="luluh100 nav-link d-flex flex-column align-items-center justify-content-evenly active"

@@ -1,4 +1,8 @@
 ///////////////////////////// Basic layout
+#luluwrapper-whole{
+  background-color: var(--lulubgblack);
+}
+
 #luluwrapper-top {
   height: 9%; //used to be 8%
 }
@@ -12,12 +16,19 @@
 }
 
 ///////////////////////////// Top nav
+/// 
+#lulutopnav{
+  background-color: #1a1e21;
+}
 #lulutopnav button {
   //overrides bootstrap active states
   color: var(--lulugold1);
 }
 
 ///////////////////////////// Bottom nav
+#lulubottomnav{
+  background-color: #1a1e21;
+}
 #lulubottomnav li {
   width: 33%;
 }
@@ -28,7 +39,7 @@
 
 #lulubottomnav .nav-link.active {
   //overrides #lulubottomnavbutton
-  background-color: var(--lulugrey4);
+  background-color: var(--lulugrey3);
   color: black;
 }
 
@@ -45,24 +56,24 @@
 // ************************ //
 // TEST LEILA = Animation for page reload after login
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+// @keyframes fadeIn {
+//   0% {
+//     opacity: 0;
+//   }
+//   25% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
 
-#luluwrapper-whole {
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0s;
-  animation-name: fadeIn;
-}
+// #luluwrapper-whole {
+//   animation-duration: 2s;
+//   animation-timing-function: ease-in-out;
+//   animation-delay: 0s;
+//   animation-name: fadeIn;
+// }
 
 
 
