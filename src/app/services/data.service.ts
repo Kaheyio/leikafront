@@ -26,9 +26,13 @@ export class DataService {
 
 
   constructor(private crudService: CrudService) {
+    this.shareData();
+  }
+
+  shareData(){
     /* get user id and leikode that were put in session storage on login
      [NB: to keep data displayed if page is refreshed] */
-    if (sessionStorage.getItem('leikaUID') && sessionStorage.getItem('leikaULK')) {
+     if (sessionStorage.getItem('leikaUID') && sessionStorage.getItem('leikaULK')) {
 
       this.userId = sessionStorage.getItem('leikaUID');
       this.$userLeikode.next(sessionStorage.getItem('leikaULK'));
@@ -63,9 +67,10 @@ export class DataService {
   }
 
 
+
+
   // GETTER AND SETTERS TO SHARE USER DATA WITHIN THE APP
 
-  
   getLoggedUserData(){
     return this.userData;
   }
@@ -79,6 +84,8 @@ export class DataService {
     this.$userData.next(setUserData);
   }
 
+
+  // CLEAR DATA
   // clear user data and leikode from session storage
   clearSessionStorage() {
     sessionStorage.clear();
