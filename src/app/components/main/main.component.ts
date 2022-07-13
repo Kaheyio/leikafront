@@ -34,4 +34,12 @@ export class MainComponent implements OnInit {
   }
 
 
+  // TEST LOADING ANIMATION
+
+  // hide the loader after page is loaded fully
+
+  // END TEST LOADING ANIMATION
+
+
+
 }
