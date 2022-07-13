@@ -33,8 +33,9 @@
                 <div *ngIf="transaction.transactionType=='Card'">{{'Card **** ' + (transaction.transactionRef |
                     slice:-4) }}</div>
                 <div *ngIf="transaction.transactionType=='Direct debit'">{{"SEPA " + transaction.transactionRef}}</div>
-                <div *ngIf="transaction.transactionType=='Wire transfer'">{{"From: " + transaction.transactionRef}}
-                </div>
+                <div *ngIf="transaction.transactionType=='Direct credit'">{{"From: " + transaction.transactionRef}}</div>
+                <div *ngIf="transaction.transactionType=='Wire transfer'">{{"To: " + transaction.transactionRef}}</div>
+
             </div>
             <div class="w-100 d-flex flex-row">
                 <div class="lulutransacard-category">
@@ -43,21 +44,7 @@
                 <div class="lulutransacard-price luluw40 ms-auto d-flex flex-row align-items-start justify-content-evenly"
                     [ngClass]="{'lulugreentransaction' : !transaction.amountnegative}">
                     <div class="d-flex flex-row mx-1">
-                        {{
-                        ((transaction.amountnegative)? ("- ") : ("+ "))
-                        +
-                        (
-                        (transaction.amount.length>6)
-                        ?
-                        (transaction.amount|slice:-15:-12) + ' ' + (transaction.amount|slice:-12:-9) + ' ' +
-                        (transaction.amount|slice:-9:-6) + ' ' + (transaction.amount|slice:-6)
-                        :
-                        (transaction.amount)
-                        )
-                        }}
-                    </div>
-                    <div class="lulutransacard-currency mx-1">
-                        &euro;
+                        {{ formatAmount(transaction.amount) }} &euro;
                     </div>
                 </div>
             </div>
@@ -83,8 +70,9 @@
                 <div *ngIf="transaction.transactionType=='Card'">{{'Card **** ' + (transaction.transactionRef |
                     slice:-4) }}</div>
                 <div *ngIf="transaction.transactionType=='Direct debit'">{{"SEPA " + transaction.transactionRef}}</div>
-                <div *ngIf="transaction.transactionType=='Wire transfer'">{{"From: " + transaction.transactionRef}}
-                </div>
+                <div *ngIf="transaction.transactionType=='Direct credit'">{{"From: " + transaction.transactionRef}}</div>
+                <div *ngIf="transaction.transactionType=='Wire transfer'">{{"To: " + transaction.transactionRef}}</div>
+
             </div>
             <div class="w-100 d-flex flex-row">
                 <div class="lulutransacard-category">
@@ -93,21 +81,7 @@
                 <div class="lulutransacard-price luluw40 ms-auto d-flex flex-row align-items-start justify-content-evenly"
                     [ngClass]="{'lulugreentransaction' : !transaction.amountnegative}">
                     <div class="d-flex flex-row mx-1">
-                        {{
-                        ((transaction.amountnegative)? ("- ") : ("+ "))
-                        +
-                        (
-                        (transaction.amount.length>6)
-                        ?
-                        (transaction.amount|slice:-15:-12) + ' ' + (transaction.amount|slice:-12:-9) + ' ' +
-                        (transaction.amount|slice:-9:-6) + ' ' + (transaction.amount|slice:-6)
-                        :
-                        (transaction.amount)
-                        )
-                        }}
-                    </div>
-                    <div class="lulutransacard-currency mx-1">
-                        &euro;
+                        {{ formatAmount(transaction.amount) }} &euro;
                     </div>
                 </div>
             </div>

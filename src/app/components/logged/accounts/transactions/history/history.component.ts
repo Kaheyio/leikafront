@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LuluFormatFunctions } from 'src/app/shared/lulu-functions';
 
 @Component({
   selector: 'app-history',
@@ -10,33 +11,33 @@ export class HistoryComponent implements OnInit {
   //LULUONLY display the checkedrejectedtransactions user told to show when checking them
   // checkedrejectedshowinhistory {} = all transactions with checkedrejectedshowinhistory value
   transactiontemplate = [
-        ///////////////////////////////////////////////////// TEMPLATE
-        {
-          title: "",
-          amount: "",
-          amountnegative: "",
-          submissionDate: "",
-          accountRef: "",         // associated account
-          transactionType: "",    // ['Card', 'Direct debit', 'Direct credit', 'Wire transfer']
-          transactionRef: "",     // card number or prelev ref or newmove motif
-          targetAccount: "",      // target for newmove
-          transactionStatus: "",  //['Incoming', 'Pending', 'Past', 'Rejected'],
-          
-          userValidationStatus: "", //['Pending', 'Cancelled', 'Validated']
-    
-          bankValidationStatus: "",
-    
-          estimatedDate: "",
-    
-          category: "", //['Groceries', 'Routine', 'Children and School', 'Healthcare', 'Housing', 'Mobility', 'Digital', 'Pets', 'Taxes', 'Other', 'Savings']
-    
-          rejectionMotif: "",
-          
-          // !!!!!!!! ADDED BY LULU NOT IN DB
-          onlinestatus: true,
-          usernote: "Had to do this one to get something out of someone but turns out i got reinburesed by someone else 100"
-        },
-        ////////////////////////////////////////////////////// END OF TEMPLATE
+    ///////////////////////////////////////////////////// TEMPLATE
+    {
+      title: "",
+      amount: "",
+      amountnegative: "",
+      submissionDate: "",
+      accountRef: "",         // associated account
+      transactionType: "",    // ['Card', 'Direct debit', 'Direct credit', 'Wire transfer']
+      transactionRef: "",     // card number or prelev ref or newmove motif
+      targetAccount: "",      // target for newmove
+      transactionStatus: "",  //['Incoming', 'Pending', 'Past', 'Rejected'],
+
+      userValidationStatus: "", //['Pending', 'Cancelled', 'Validated']
+
+      bankValidationStatus: "",
+
+      estimatedDate: "",
+
+      category: "", //['Groceries', 'Routine', 'Children and School', 'Healthcare', 'Housing', 'Mobility', 'Digital', 'Pets', 'Taxes', 'Other', 'Savings']
+
+      rejectionMotif: "",
+
+      // !!!!!!!! ADDED BY LULU NOT IN DB
+      onlinestatus: true,
+      usernote: "Had to do this one to get something out of someone but turns out i got reinburesed by someone else 100"
+    },
+    ////////////////////////////////////////////////////// END OF TEMPLATE
   ]
 
   historytransactions = [
@@ -50,14 +51,14 @@ export class HistoryComponent implements OnInit {
       transactionRef: "5514040338055704",
       targetAccount: "",
       transactionStatus: "Past",
-      
-      userValidationStatus: "Validated", 
+
+      userValidationStatus: "Validated",
 
       bankValidationStatus: true,
 
       estimatedDate: "1656594361",
 
-      category: "Groceries", 
+      category: "Groceries",
 
       rejectionMotif: "",
 
@@ -74,14 +75,14 @@ export class HistoryComponent implements OnInit {
       transactionRef: "Piano Guy, account n*-5556",
       targetAccount: "",
       transactionStatus: "Past",
-      
-      userValidationStatus: "Validated", 
+
+      userValidationStatus: "Validated",
 
       bankValidationStatus: true,
 
       estimatedDate: "1656594361",
 
-      category: "Other", 
+      category: "Other",
 
       rejectionMotif: "",
 
@@ -98,14 +99,14 @@ export class HistoryComponent implements OnInit {
       transactionRef: "June provisions Mandat n*2000040",
       targetAccount: "",
       transactionStatus: "Past",
-      
-      userValidationStatus: "Validated", 
+
+      userValidationStatus: "Validated",
 
       bankValidationStatus: true,
 
       estimatedDate: "1656594361",
 
-      category: "Routine", 
+      category: "Routine",
 
       rejectionMotif: "",
 
@@ -119,17 +120,17 @@ export class HistoryComponent implements OnInit {
       submissionDate: "1656594365",
       accountRef: "AD1200012030200359100100",
       transactionType: "Wire transfer",
-      transactionRef: "Virement instantané",
+      transactionRef: "Somenyce Dude, account n*-5556",
       targetAccount: "Véronique Griffon ****-5566",
       transactionStatus: "Past",
-      
-      userValidationStatus: "Validated", 
+
+      userValidationStatus: "Validated",
 
       bankValidationStatus: true,
 
       estimatedDate: "1656594361",
 
-      category: "Other", 
+      category: "Other",
 
       rejectionMotif: "",
 
@@ -151,6 +152,11 @@ export class HistoryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  formatAmount(num: any) {
+    let formatednum = LuluFormatFunctions.formatAmount(num);
+    return formatednum;
   }
 
 }
