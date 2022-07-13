@@ -9,62 +9,140 @@ export class HistoryComponent implements OnInit {
 
   //LULUONLY display the checkedrejectedtransactions user told to show when checking them
   // checkedrejectedshowinhistory {} = all transactions with checkedrejectedshowinhistory value
+  transactiontemplate = [
+        ///////////////////////////////////////////////////// TEMPLATE
+        {
+          title: "",
+          amount: "",
+          amountnegative: "",
+          submissionDate: "",
+          accountRef: "",         // associated account
+          transactionType: "",    // ['Card', 'Direct debit', 'Direct credit', 'Wire transfer']
+          transactionRef: "",     // card number or prelev ref or newmove motif
+          targetAccount: "",      // target for newmove
+          transactionStatus: "",  //['Incoming', 'Pending', 'Past', 'Rejected'],
+          
+          userValidationStatus: "", //['Pending', 'Cancelled', 'Validated']
+    
+          bankValidationStatus: "",
+    
+          estimatedDate: "",
+    
+          category: "", //['Groceries', 'Routine', 'Children and School', 'Healthcare', 'Housing', 'Mobility', 'Digital', 'Pets', 'Taxes', 'Other', 'Savings']
+    
+          rejectionMotif: "",
+          
+          // !!!!!!!! ADDED BY LULU NOT IN DB
+          onlinestatus: true,
+          usernote: "Had to do this one to get something out of someone but turns out i got reinburesed by someone else 100"
+        },
+        ////////////////////////////////////////////////////// END OF TEMPLATE
+  ]
 
   historytransactions = [
-    {
-      transactiontitle: "Amazon Payements Europe S",
-      emissiontimestamp: "1656594361",
-      sumbissiontimestamp: "1656594363",
-      targetaccount: "AD1200012030200359100100",
-      type: "card",
-      cardnumber: "379108098493384",
-      amount: "12.99",
-      amountnegative: false,
-      transactionstatus: "history",
-      onlinestatus: true,
-      leikodevalidationstatus: "confirmed",
-      bankvalidationstatus: "valid",
-      category: "Ultraefaefaefa faefaefafaef faacat",
-      subcategory: "Supercatstuff Enouefaf haefaaefaf",
-      usernote: "Had to do this one to get something out of someone but turns out i got reinburesed by someone else 100"
-    },
-    {
-      transactiontitle: "Sfr prlv sepa",
-      emissiontimestamp: "1656599361",
-      sumbissiontimestamp: "1656594361",
-      targetaccount: "AD1200012030200359100100",
-      type: "prelevement",
-      prelevref: "Excès forfait 28/06",
-      amount: "89.99",
+    { // CB online paiement
+      title: "Amazon Payements Europe S",
+      amount: "129.99",
       amountnegative: true,
-      transactionstatus: "history",
-      leikodevalidationstatus: "confirmed",
-      bankvalidationstatus: "valid",
-      category: "none",
-      subcategory: "none"
+      submissionDate: "1656594363",
+      accountRef: "AD1200012030200359100100",
+      transactionType: "Card",
+      transactionRef: "5514040338055704",
+      targetAccount: "",
+      transactionStatus: "Past",
+      
+      userValidationStatus: "Validated", 
+
+      bankValidationStatus: true,
+
+      estimatedDate: "1656594361",
+
+      category: "Groceries", 
+
+      rejectionMotif: "",
+
+      onlinestatus: true,
+      usernote: "Prime Days, sorry honey, I had to buy that 3D ultra 4K hdmi screen..."
     },
-    {
-      transactiontitle: "Gave a buck to a bro",
-      emissiontimestamp: "1656994361",
-      sumbissiontimestamp: "1656594362",
-      targetaccount: "AD1200012030200359100100",
-      type: "newmove",
-      newmovenote: "Dude needed it.",
+    { //received wire transfer
+      title: "Piano Guy Pays Back",
+      amount: "9999999999999999.01",
+      amountnegative: false,
+      submissionDate: "1656594361",
+      accountRef: "AD1200012030200359100100",
+      transactionType: "Direct credit",
+      transactionRef: "Piano Guy, account n*-5556",
+      targetAccount: "",
+      transactionStatus: "Past",
+      
+      userValidationStatus: "Validated", 
+
+      bankValidationStatus: true,
+
+      estimatedDate: "1656594361",
+
+      category: "Other", 
+
+      rejectionMotif: "",
+
+      onlinestatus: false,
+      usernote: ""
+    },
+    { //SEPA prelev
+      title: "Prelev Sepa Sfr",
+      amount: "13.50",
+      amountnegative: true,
+      submissionDate: "1656594362",
+      accountRef: "AD1200012030200359100100",
+      transactionType: "Direct debit",
+      transactionRef: "June provisions Mandat n*2000040",
+      targetAccount: "",
+      transactionStatus: "Past",
+      
+      userValidationStatus: "Validated", 
+
+      bankValidationStatus: true,
+
+      estimatedDate: "1656594361",
+
+      category: "Routine", 
+
+      rejectionMotif: "",
+
+      onlinestatus: false,
+      usernote: ""
+    },
+    { //Newmove
+      title: "Gave a buck to a bro in need",
       amount: "1.00",
       amountnegative: true,
-      transactionstatus: "history",
-      leikodevalidationstatus: "confirmed",
-      bankvalidationstatus: "valid",
-      category: "none",
-      subcategory: "none"
+      submissionDate: "1656594365",
+      accountRef: "AD1200012030200359100100",
+      transactionType: "Wire transfer",
+      transactionRef: "Virement instantané",
+      targetAccount: "Véronique Griffon ****-5566",
+      transactionStatus: "Past",
+      
+      userValidationStatus: "Validated", 
+
+      bankValidationStatus: true,
+
+      estimatedDate: "1656594361",
+
+      category: "Other", 
+
+      rejectionMotif: "",
+
+      onlinestatus: false,
+      usernote: ""
     },
   ]
 
-  sortedhistory = this.historytransactions.sort((x: any, y: any) => {
+  sortedhistorytoday = this.historytransactions.sort((x: any, y: any) => {
     return x.sumbissiontimestamp - y.sumbissiontimestamp;
   })
   sortedhistory2 = this.historytransactions.sort((x: any, y: any) => {
-    return x.sumbissiontimestamp - y.sumbissiontimestamp;
+    return y.sumbissiontimestamp - x.sumbissiontimestamp;
   })
   sortedhistory3 = this.historytransactions.sort((x: any, y: any) => {
     return x.sumbissiontimestamp - y.sumbissiontimestamp;
@@ -73,7 +151,6 @@ export class HistoryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("sorted history = " + this.sortedhistory)
   }
 
 }

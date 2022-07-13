@@ -33,12 +33,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
     --lulucardtextgrey: #727272;
     --lulucardusernote: #969696;
-    --lulucardusernoteborder: #f7f3f3;
+    --lulucardusernoteborder: #ececec; //f7f3f3
     --lulucardtextgreen: #0dd02a;
 
-    --lulured: rgb(248, 182, 182);
-    --luluyellow: rgb(249, 255, 170);
-    --lulugreen: rgb(199, 248, 187);
+    --lulured: rgba(248, 182, 182, 0.593); //(248, 182, 182)
+    --luluyellow: rgb(249, 255, 170); //(249, 255, 170)
+    --lulugreen: rgb(199, 248, 187); //(199, 248, 187)
 }
 
 .lulugrey{
