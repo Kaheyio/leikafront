@@ -12,43 +12,45 @@
 
 <!-- Card Transaction card -->
 Today
-<div *ngFor="let transaction of sortedhistory">
+<div class="border-start border-end border-top rounded">
 
-    <a class="lulutransacard p-1 border-bottom mt-1 d-flex flex-row justify-content-evenly align-items-center"
+    <!-- TODOLULU on click, pass transaction id as a parameter to transactiondetail component -->
+    <!-- logo ngif checkedrejectedshowinhistory then show a red cross (no category, it was rejected), otherwise show category logo 
+        add a ONLINE vignette par dessus 
+    -->
+    <!-- div If type = virement then not Card ** just a slice -->
+    <!-- TODO format amount-->
+
+    <a *ngFor="let transaction of sortedhistory"
+        class="lulutransacard p-1 border-bottom mt-1 d-flex flex-row justify-content-evenly align-items-center"
         data-bs-toggle="offcanvas" data-bs-target="#transaction-details-canvas"
         aria-controls="transaction-details-canvas">
-        <!-- TODOLULU on click, pass transaction id as a parameter to managereceivers component -->
-        <!-- TODOLULU ngclass border-bottom if there's more than one card per day-->
-        <!-- logo ngif checkedrejectedshowinhistory then show a red cross (no category, it was rejected), otherwise show category logo -->
         <img class="lulutransacard-logo p-1" src="../../../../../../assets/logotest.png" alt="categorylogo">
-        <!-- add a ONLINE vignette par dessus -->
         <div class="lulutransacard-text px-2 d-flex flex-column justify-content-center align-items-start">
-            <div class="lulutransacard-title">{{transaction.transactiontitle}}</div> <!-- set a max nb of characters -->
+            <div class="lulutransacard-title">
+                {{ (transaction.transactiontitle.length>25)? (transaction.transactiontitle | slice:0:25) + '..'
+                :(transaction.transactiontitle) }}
+            </div>
             <div class="lulutransacard-date-cardnb d-flex flex-row">
-                <!-- set a max width for each (never know) -->
-                <div *ngIf="transaction.cardnumber">Card **** {{transaction.cardnumber | slice:-4}}</div>
-                <div></div> <!-- or subtitle (motif) if SEPA -->
+                <div *ngIf="transaction.cardnumber">{{'Card **** ' + (transaction.cardnumber | slice:-4)}}</div>
             </div>
             <div class="w-100 d-flex flex-row">
                 <div class="lulutransacard-category">
-                    <!-- 30characters max -->
-                    Category, subcategory
+                    {{(transaction.category | slice:0:15) + ", " + (transaction.subcategory | slice:0:15) + ".."}}
                 </div>
-                <div
-                    class="lulutransacard-price lulugreentransaction luluw40 ms-auto d-flex flex-row align-items-start justify-content-evenly">
-                    <!-- ngclass if (amount positive) class = lulugreentransaction -->
+                <div class="lulutransacard-price luluw40 ms-auto d-flex flex-row align-items-start justify-content-evenly"
+                    [ngClass]="{'lulugreentransaction' : !transaction.amountnegative}">
                     <div class="lulutransacard-currency mx-1">
                         &euro;
                     </div>
                     <div class="d-flex flex-row mx-1">
-                        <div class="mx-1">+</div> <!-- {{symbole}} (ts: if positive symbole = + else = -) -->
-                        <div class="mx-1">{{transaction.amount}}</div> <!-- TODO format amount-->
+                        <div class="mx-1">{{ (transaction.amountnegative)? ("- " + transaction.amount) : ("+ " +
+                            transaction.amount)}}</div>
                     </div>
                 </div>
             </div>
             <div *ngIf="transaction.usernote" class="lulutransacard-usernote text-center">
-                <!-- 100characters max -->
-                {{transaction.usernote}}
+                {{(transaction.usernote | slice:0:100) + ".."}}
             </div>
         </div>
     </a>

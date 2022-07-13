@@ -12,20 +12,20 @@ export class HistoryComponent implements OnInit {
 
   historytransactions = [
     {
-      transactiontitle: "TEEEEEEEEEEEST",
+      transactiontitle: "Amazon Payements Europe S",
       emissiontimestamp: "1656594361",
       sumbissiontimestamp: "1656594363",
       targetaccount: "AD1200012030200359100100",
       type: "card",
       cardnumber: "379108098493384",
-      amount: "-12.99",
-      amountnegative: true,
+      amount: "12.99",
+      amountnegative: false,
       transactionstatus: "history",
       onlinestatus: true,
       leikodevalidationstatus: "confirmed",
       bankvalidationstatus: "valid",
-      category: "none",
-      subcategory: "none",
+      category: "Ultraefaefaefa faefaefafaef faacat",
+      subcategory: "Supercatstuff Enouefaf haefaaefaf",
       usernote: "Had to do this one to get something out of someone but turns out i got reinburesed by someone else 100"
     },
     {
@@ -35,7 +35,7 @@ export class HistoryComponent implements OnInit {
       targetaccount: "AD1200012030200359100100",
       type: "prelevement",
       prelevref: "Excès forfait 28/06",
-      amount: "-89.99",
+      amount: "89.99",
       amountnegative: true,
       transactionstatus: "history",
       leikodevalidationstatus: "confirmed",
@@ -50,7 +50,7 @@ export class HistoryComponent implements OnInit {
       targetaccount: "AD1200012030200359100100",
       type: "newmove",
       newmovenote: "Dude needed it.",
-      amount: "-1.00",
+      amount: "1.00",
       amountnegative: true,
       transactionstatus: "history",
       leikodevalidationstatus: "confirmed",
