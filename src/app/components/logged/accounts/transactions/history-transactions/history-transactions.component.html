@@ -70,10 +70,10 @@
         data-bs-toggle="offcanvas" data-bs-target="#transaction-details-canvas"
         aria-controls="transaction-details-canvas">
         <img class="lulutransacard-logo p-2"
-            src="../../../../../../assets/categories/{{!transaction.amountnegative?transaction.category+'white':transaction.category}}.ico"
+            src="../../../../../../assets/categories/{{transaction.transactionStatus=='Rejected'?'Rejected-checked':!transaction.amountnegative?transaction.category+'white':transaction.category}}.ico"
             alt="ico">
         <div class="lulutransacard-text px-2 d-flex flex-column justify-content-center align-items-start">
-            <div class="lulutransacard-title" [ngClass]="{'lulurejectedtransaction': transaction.category=='Rejected'}">
+            <div class="lulutransacard-title" [ngClass]="{'lulurejectedtransaction': transaction.transactionStatus=='Rejected'}">
                 {{ (transaction.title.length>25) ? (transaction.title|slice:0:25)+'..' : (transaction.title) }}
             </div>
             <div class="lulutransacard-date-cardnb d-flex flex-row">
@@ -91,7 +91,7 @@
                     {{(transaction.category | slice:0:30)}}
                 </div>
                 <div class="lulutransacard-price luluw40 ms-auto d-flex flex-row align-items-start justify-content-evenly"
-                    [ngClass]="{'lulugreentransaction' : !transaction.amountnegative, 'lulurejectedtransaction': transaction.category=='Rejected'}">
+                    [ngClass]="{'lulugreentransaction' : !transaction.amountnegative, 'lulurejectedtransaction': transaction.transactionStatus=='Rejected'}">
                     <div class="d-flex flex-row mx-1">
                         {{ formatAmount(transaction.amount) }} &euro;
                     </div>

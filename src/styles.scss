@@ -17,7 +17,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --luluclear: #fbfdff;
     --lulugrey: #C3C0C0ff;
     --lulugold: rgb(224, 182, 66);
-    
+
     --lulucardborder: #dddada;
 
     --lulublack: #141414ff;
@@ -73,6 +73,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .luluultrablacktxt{
     color: var(--luluultrablack);
+}
+.lulugoldtxt{
+    color: var(--lulugold);
 }
 .lulusignaturetxt{
     color: var(--lulugrey4);
