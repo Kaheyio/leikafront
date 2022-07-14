@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { LuluFormatFunctions } from 'src/app/shared/lulu-functions';
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.scss']
+  selector: 'app-history-transactions',
+  templateUrl: './history-transactions.component.html',
+  styleUrls: ['./history-transactions.component.scss']
 })
-export class HistoryComponent implements OnInit {
+export class HistoryTransactionsComponent implements OnInit {
 
   //LULUONLY display the checkedrejectedtransactions user told to show when checking them
   // checkedrejectedshowinhistory {} = all transactions with checkedrejectedshowinhistory value
@@ -29,7 +29,9 @@ export class HistoryComponent implements OnInit {
 
       estimatedDate: "",
 
-      category: "", //['Groceries', 'Routine', 'Children and School', 'Healthcare', 'Housing', 'Mobility', 'Digital', 'Pets', 'Taxes', 'Other', 'Savings']
+      // TODO changed categories
+      category: "", //['Digital', 'Family', 'Groceries', 'Healthcare', 'Housing', 'Leisure', 'Moibility', 'Savings', 'Other']
+
 
       rejectionMotif: "",
 
@@ -82,7 +84,7 @@ export class HistoryComponent implements OnInit {
 
       estimatedDate: "1656594361",
 
-      category: "Other",
+      category: "Savings",
 
       rejectionMotif: "",
 
@@ -96,7 +98,7 @@ export class HistoryComponent implements OnInit {
       submissionDate: "1656594362",
       accountRef: "AD1200012030200359100100",
       transactionType: "Direct debit",
-      transactionRef: "June provisions Mandat n*2000040",
+      transactionRef: "June provisions Mandat n*200004",
       targetAccount: "",
       transactionStatus: "Past",
 
@@ -106,7 +108,7 @@ export class HistoryComponent implements OnInit {
 
       estimatedDate: "1656594361",
 
-      category: "Routine",
+      category: "Digital",
 
       rejectionMotif: "",
 
@@ -130,7 +132,7 @@ export class HistoryComponent implements OnInit {
 
       estimatedDate: "1656594361",
 
-      category: "Other",
+      category: "Leisure",
 
       rejectionMotif: "",
 

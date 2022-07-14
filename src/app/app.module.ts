@@ -15,7 +15,7 @@ import { AccountsComponent } from './components/logged/accounts/accounts.compone
 import { ContactComponent } from './components/logged/contact/contact.component';
 import { TransactionsComponent } from './components/logged/accounts/transactions/transactions.component';
 import { SpecialComponent } from './components/logged/accounts/transactions/special/special.component';
-import { HistoryComponent } from './components/logged/accounts/transactions/history/history.component';
+import { HistoryTransactionsComponent } from './components/logged/accounts/transactions/history-transactions/history-transactions.component';
 import { AccountpickerComponent } from './components/logged/accounts/accountpicker/accountpicker.component';
 import { CardsComponent } from './components/logged/accounts/cards/cards.component';
 import { StatsComponent } from './components/logged/accounts/stats/stats.component';
@@ -44,7 +44,7 @@ import { MainComponent } from './components/main/main.component';
     ContactComponent,
     TransactionsComponent,
     SpecialComponent,
-    HistoryComponent,
+    HistoryTransactionsComponent,
     AccountpickerComponent,
     CardsComponent,
     StatsComponent,

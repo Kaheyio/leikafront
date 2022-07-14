@@ -32,13 +32,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --lulubtnred: rgb(212, 30, 30);
 
     --lulucardtextgrey: #727272;
-    --lulucardusernote: #969696;
+    --lulucardusernote: #707070;
+    // --lulucardusernote: #969696;
+    // --lulucardusernote: rgb(224, 182, 66);
     --lulucardusernoteborder: #ececec; //f7f3f3
     --lulucardtextgreen: #0dd02a;
 
     --lulured: rgba(248, 182, 182, 0.593); //(248, 182, 182)
     --luluyellow: rgb(249, 255, 170); //(249, 255, 170)
     --lulugreen: rgb(199, 248, 187); //(199, 248, 187)
+
 }
 
 .lulugrey{
@@ -145,3 +148,12 @@ a{
     overflow-y: scroll;
 }
 
+
+
+
+.tg{
+    background-color: #000000;
+    background-image: linear-gradient(280deg, #000000 0%, #434343 99%);
+}
+
+// Test gradient leila blue whale
