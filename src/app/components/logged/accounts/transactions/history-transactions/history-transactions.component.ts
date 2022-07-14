@@ -69,12 +69,36 @@ export class HistoryTransactionsComponent implements OnInit {
     },
     { //received wire transfer
       title: "Piano Guy Pays Back",
-      amount: "9999999999999999.01",
+      amount: "9000.01",
       amountnegative: false,
       submissionDate: "1656594361",
       accountRef: "AD1200012030200359100100",
       transactionType: "Direct credit",
       transactionRef: "Piano Guy, account n*-5556",
+      targetAccount: "",
+      transactionStatus: "Past",
+
+      userValidationStatus: "Validated",
+
+      bankValidationStatus: true,
+
+      estimatedDate: "1656594361",
+
+      category: "Family",
+
+      rejectionMotif: "",
+
+      onlinestatus: false,
+      usernote: ""
+    },
+    { //self transfer from savings
+      title: "Piggy break time !",
+      amount: "0.12",
+      amountnegative: false,
+      submissionDate: "1656594368",
+      accountRef: "AD1200012030200359100100",
+      transactionType: "Direct credit",
+      transactionRef: "Savings, account n*-8889",
       targetAccount: "",
       transactionStatus: "Past",
 
