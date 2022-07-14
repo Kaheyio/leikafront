@@ -8,6 +8,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 // ******************STYLES REFS*******************************************************************
 
+// TODOLULU global transacard classe(s)
 
 :root{
     --luluultrablack: #1a1e21;
@@ -16,6 +17,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --luluclear: #fbfdff;
     --lulugrey: #C3C0C0ff;
     --lulugold: rgb(224, 182, 66);
+    
+    --lulucardborder: #dddada;
 
     --lulublack: #141414ff;
     --lulublack2: #242424ff;
@@ -37,11 +40,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     // --lulucardusernote: rgb(224, 182, 66);
     --lulucardusernoteborder: #ececec; //f7f3f3
     --lulucardtextgreen: #0dd02a;
-
-    --lulured: rgba(248, 182, 182, 0.593); //(248, 182, 182)
+    --lulucardtextred: #d00d0d;
+    
+    --lulured: rgba(248, 182, 182); //(248, 182, 182, 0.593)
     --luluyellow: rgb(249, 255, 170); //(249, 255, 170)
     --lulugreen: rgb(199, 248, 187); //(199, 248, 187)
+    
+    --luluredtxt: rgb(170, 2, 2); //(248, 182, 182)
+    --lulugreentxt: rgb(2, 170, 131); //(248, 182, 182)
 
+    --lulublue: #4d4deeaa;
 }
 
 .lulugrey{
@@ -139,6 +147,10 @@ a{
 
 .lulugreentransaction{
     color: var(--lulucardtextgreen);
+}
+.lulurejectedtransaction{
+    // color: var(--lulucardtextred);
+    text-decoration: line-through;
 }
 
 .luluscrollx{

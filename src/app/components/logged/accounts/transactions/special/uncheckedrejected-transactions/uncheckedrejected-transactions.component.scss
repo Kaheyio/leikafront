@@ -1,29 +1,27 @@
-.luluincomingtransacard{
-    background-color: var(--lulugreen);
+.lulurejectedtransacard{
+    background-color: var(--lulured);
     max-height: 200px;
     border-bottom: 1px solid var(--lulucardborder);
+    color: var(--luluredtxt);
     
     // border-radius: 50px;
 }
 
-.luluincomingtransacard-logo {
+.lulurejectedtransacard-logo {
     width: 14%;
     max-width: 55px;
 }
 
-.luluincomingtransacard-text {
+.lulurejectedtransacard-text {
     width: 85%;
     font-size: 0.7rem;
 }
 
-.luluincomingtransacard-title {
+.lulurejectedtransacard-title {
     font-size: 0.9rem;
 }
 
-.luluincomingtransacard-price {
+.lulurejectedtransacard-price {
     font-size: 0.9rem;
     min-width: fit-content;
-}
-.luluincomingtransacard-date{
-    color: var(--lulugreentxt);
 }

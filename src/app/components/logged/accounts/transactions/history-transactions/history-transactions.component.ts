@@ -10,7 +10,7 @@ export class HistoryTransactionsComponent implements OnInit {
 
   //LULUONLY display the checkedrejectedtransactions user told to show when checking them
   // checkedrejectedshowinhistory {} = all transactions with checkedrejectedshowinhistory value
-  transactiontemplate = [
+  historytransactiontemplate = [
     ///////////////////////////////////////////////////// TEMPLATE
     {
       title: "",
@@ -19,7 +19,7 @@ export class HistoryTransactionsComponent implements OnInit {
       submissionDate: "",
       accountRef: "",         // associated account
       transactionType: "",    // ['Card', 'Direct debit', 'Direct credit', 'Wire transfer']
-      transactionRef: "",     // card number or prelev ref or newmove motif
+      transactionRef: "",     // card number or prelev ref or newmove reason
       targetAccount: "",      // target for newmove
       transactionStatus: "",  //['Incoming', 'Pending', 'Past', 'Rejected'],
 
@@ -33,7 +33,7 @@ export class HistoryTransactionsComponent implements OnInit {
       category: "", //['Digital', 'Family', 'Groceries', 'Healthcare', 'Housing', 'Leisure', 'Moibility', 'Savings', 'Other']
 
 
-      rejectionMotif: "",
+      rejectionReason: "",
 
       // !!!!!!!! ADDED BY LULU NOT IN DB
       onlinestatus: true,
@@ -62,10 +62,34 @@ export class HistoryTransactionsComponent implements OnInit {
 
       category: "Groceries",
 
-      rejectionMotif: "",
+      rejectionReason: "",
 
       onlinestatus: true,
       usernote: "Prime Days, sorry honey, I had to buy that 3D ultra 4K hdmi screen..."
+    },
+    { // Rejected CB paiement
+      title: "Amazon Payements Europe S",
+      amount: "129.99",
+      amountnegative: true,
+      submissionDate: "1656594363",
+      accountRef: "AD1200012030200359100100",
+      transactionType: "Card",
+      transactionRef: "5514040338055704",
+      targetAccount: "",
+      transactionStatus: "Rejected",
+
+      userValidationStatus: "Validated",
+
+      bankValidationStatus: false,
+
+      estimatedDate: "1656594361",
+
+      category: "",
+
+      rejectionReason: "",
+
+      onlinestatus: true,
+      usernote: ""
     },
     { //received wire transfer
       title: "Piano Guy Pays Back",
@@ -86,7 +110,7 @@ export class HistoryTransactionsComponent implements OnInit {
 
       category: "Family",
 
-      rejectionMotif: "",
+      rejectionReason: "",
 
       onlinestatus: false,
       usernote: ""
@@ -110,7 +134,7 @@ export class HistoryTransactionsComponent implements OnInit {
 
       category: "Savings",
 
-      rejectionMotif: "",
+      rejectionReason: "",
 
       onlinestatus: false,
       usernote: ""
@@ -134,7 +158,7 @@ export class HistoryTransactionsComponent implements OnInit {
 
       category: "Digital",
 
-      rejectionMotif: "",
+      rejectionReason: "",
 
       onlinestatus: false,
       usernote: ""
@@ -158,7 +182,7 @@ export class HistoryTransactionsComponent implements OnInit {
 
       category: "Leisure",
 
-      rejectionMotif: "",
+      rejectionReason: "",
 
       onlinestatus: false,
       usernote: ""

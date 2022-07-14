@@ -1,21 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { LuluFormatFunctions } from 'src/app/shared/lulu-functions';
 
 @Component({
-  selector: 'app-special',
-  templateUrl: './special.component.html',
-  styleUrls: ['./special.component.scss']
+  selector: 'app-uncheckedrejected-transactions',
+  templateUrl: './uncheckedrejected-transactions.component.html',
+  styleUrls: ['./uncheckedrejected-transactions.component.scss']
 })
-export class SpecialComponent implements OnInit {
+export class UncheckedrejectedTransactionsComponent implements OnInit {
 
-  // check if there are pending leikode transactions
-  pendingleikodetransactionscounter = 1;
+ // transform into object that from transactionservice gets all transactions with status rejected AND property checked false
 
-  // check if there are incoming transactions
-  incomingtransactionscounter = 2;
-
-  // check how many have status unchecked // hope this will actualize if we modifiy the service data through its child
-
-  // TODO DUPLICATED OBJECT, just go in db and calculate length
   uncheckedrejectedtransactions = [
     { // Rejected CB paiement
       title: "Amazon Payements Europe S",
@@ -115,11 +109,17 @@ export class SpecialComponent implements OnInit {
     },
   ]
 
-  uncheckedrejectedtransactionscounter = this.uncheckedrejectedtransactions.length; 
-
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  // LULU through databaseCRUDservice, change transaction "checked" property to true
+  // LULU checkedrejected(){}
+
+  formatAmount(num: any) {
+    let formatednum = LuluFormatFunctions.formatAmount(num);
+    return formatednum;
   }
 
 }

@@ -17,7 +17,7 @@ leikodevalidationstatus = "pending refused confirmed"; //action de l'utilisateur
 bankvalidationstatus = "true or false" //nous on check le montant
 
 "REJECTED"
-rejectionmotif = "leikoderefused bankrefused" //ce qu'on affiche danse
+rejectionreason = "leikoderefused bankrefused" //ce qu'on affiche danse
 
 "INCOMING" //seulement prelevref et newmoveid
 estimateddate = "date"

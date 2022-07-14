@@ -25,7 +25,7 @@ import { ManageReceiversComponent } from './components/logged/transfer/manage-re
 import { ManageComponent } from './components/logged/manage/manage.component';
 import { TransactionDetailsComponent } from './components/logged/accounts/transactions/transaction-details/transaction-details.component';
 import { PendingLeikodeTransactionsComponent } from './components/logged/accounts/transactions/special/pending-leikode-transactions/pending-leikode-transactions.component';
-import { RejectedTransactionsComponent } from './components/logged/accounts/transactions/special/rejected-transactions/rejected-transactions.component';
+import { UncheckedrejectedTransactionsComponent } from './components/logged/accounts/transactions/special/uncheckedrejected-transactions/uncheckedrejected-transactions.component';
 import { IncomingTransactionsComponent } from './components/logged/accounts/transactions/special/incoming-transactions/incoming-transactions.component';
 import { LeikodeValidationComponent } from './components/logged/leikode-validation/leikode-validation.component';
 import { CrudService } from './services/crud.service';
@@ -53,7 +53,7 @@ import { MainComponent } from './components/main/main.component';
     ManageReceiversComponent,
     ManageComponent,
     PendingLeikodeTransactionsComponent,
-    RejectedTransactionsComponent,
+    UncheckedrejectedTransactionsComponent,
     IncomingTransactionsComponent,
     LeikodeValidationComponent,
     MainComponent,
