@@ -1,4 +1,4 @@
-<div class="luluultrablack w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+<div class="luluultrablack w-100 h-100 d-flex flex-column align-items-center justify-content-center" id="luluwrapper-wholelogin">
 
   <img src="../../../assets/logohoriz.png" class="img-fluid rounded mb-5" alt="leika logo" width="180" height="auto">
 
@@ -9,7 +9,7 @@
     {{ errorMessage }}
   </div>
 
-  <!-- TODO get rid of blue outline -->
+  <!-- TODO: get rid of blue outline -->
   <!-- Inputs -->
   <div class="p-4 d-flex flex-column align-items-center justify-content-center" id="lululogin-formwrapper">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
@@ -27,7 +27,7 @@
             placeholder="Password lulupilltest" name="password" formControlName="password" #togglePassword>
           <label for="loginpassword">Password</label>
         </div>
-        <!-- TODO put it inside-->
+        <!-- TODO: put it inside-->
         <div class="lulubg lulugreytxt input-group-text border-0" (click)="togglePW()">
           <i *ngIf="passwordShow" class="fa-solid fa-eye-slash"></i>
           <i *ngIf="!passwordShow" class="fa-solid fa-eye"></i>
