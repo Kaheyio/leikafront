@@ -1,9 +1,12 @@
 .luludayholder{
-    border: 1px solid var(--lulucardusernoteborder);
+    border-top: 1px solid var(--lulucardborder);
+    border-right: 1px solid var(--lulucardborder);
+    border-left: 1px solid var(--lulucardborder);
     border-radius: 10px;
 }
 .lulutransacard {
     max-height: 200px;
+    border-bottom: 1px solid var(--lulucardborder);
 }
 
 .lulutransacard-logo {

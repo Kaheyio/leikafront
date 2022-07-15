@@ -1,5 +1,5 @@
 // accomodate : 
-// 		card : validated, leikode pending, leikode validated, leikode refused (manual or too long), rejected (motifs?), cancelled
+// 		card : validated, leikode pending, leikode validated, leikode refused (manual or too long), rejected (reasons?), cancelled
 // 		sepa prelevement : validated, rejected, incoming, cancelled
 // 		sepa don: from particulier, from entreprise
 // 		manual transfer : validated, ordonné, 
@@ -90,7 +90,7 @@ checksusipcion(){
     }
     else (){
         setrejectiontimestamp
-        setrejectedmotif = suspicious
+        setrejectedreason = suspicious
         // no rejectedcheck because user ain't gonna see it
         addobjecttorejectedDB() // so user actually sees it?
         deleteobjectfrompendingDB()
@@ -127,7 +127,7 @@ askbank(){
                 }
                 else {
                     setrejectiontimestamp //serves as rejected = true (and rejected is always bank rejected, otherwise it doesn't make it to the app)
-                    setrejectionmotif = insufficientfunds
+                    setrejectionreason = insufficientfunds
                     setrejectedcheck = false
                     addobjecttorejectedDB()
                     deleteobjectfrompendingDB()
@@ -137,7 +137,7 @@ askbank(){
         }
         else {
             setrejectiontimestamp //serves as rejected = true (and rejected is always bank rejected, otherwise it doesn't make it to the app)
-            setrejectedmotif = threshold
+            setrejectedreason = threshold
             setrejectedcheck = false
             addobjecttorejectedDB()
             deleteobjectfrompendingDB()

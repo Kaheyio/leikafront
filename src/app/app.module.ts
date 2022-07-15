@@ -15,7 +15,7 @@ import { AccountsComponent } from './components/logged/accounts/accounts.compone
 import { ContactComponent } from './components/logged/contact/contact.component';
 import { TransactionsComponent } from './components/logged/accounts/transactions/transactions.component';
 import { SpecialComponent } from './components/logged/accounts/transactions/special/special.component';
-import { HistoryComponent } from './components/logged/accounts/transactions/history/history.component';
+import { HistoryTransactionsComponent } from './components/logged/accounts/transactions/history-transactions/history-transactions.component';
 import { AccountpickerComponent } from './components/logged/accounts/accountpicker/accountpicker.component';
 import { CardsComponent } from './components/logged/accounts/cards/cards.component';
 import { StatsComponent } from './components/logged/accounts/stats/stats.component';
@@ -25,7 +25,7 @@ import { ManageReceiversComponent } from './components/logged/transfer/manage-re
 import { ManageComponent } from './components/logged/manage/manage.component';
 import { TransactionDetailsComponent } from './components/logged/accounts/transactions/transaction-details/transaction-details.component';
 import { PendingLeikodeTransactionsComponent } from './components/logged/accounts/transactions/special/pending-leikode-transactions/pending-leikode-transactions.component';
-import { RejectedTransactionsComponent } from './components/logged/accounts/transactions/special/rejected-transactions/rejected-transactions.component';
+import { UncheckedrejectedTransactionsComponent } from './components/logged/accounts/transactions/special/uncheckedrejected-transactions/uncheckedrejected-transactions.component';
 import { IncomingTransactionsComponent } from './components/logged/accounts/transactions/special/incoming-transactions/incoming-transactions.component';
 import { LeikodeValidationComponent } from './components/logged/leikode-validation/leikode-validation.component';
 import { CrudService } from './services/crud.service';
@@ -42,7 +42,7 @@ import { MainComponent } from './components/main/main.component';
     ContactComponent,
     TransactionsComponent,
     SpecialComponent,
-    HistoryComponent,
+    HistoryTransactionsComponent,
     AccountpickerComponent,
     CardsComponent,
     StatsComponent,
@@ -51,7 +51,7 @@ import { MainComponent } from './components/main/main.component';
     ManageReceiversComponent,
     ManageComponent,
     PendingLeikodeTransactionsComponent,
-    RejectedTransactionsComponent,
+    UncheckedrejectedTransactionsComponent,
     IncomingTransactionsComponent,
     LeikodeValidationComponent,
     MainComponent
