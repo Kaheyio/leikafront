@@ -11,29 +11,30 @@
 
 
 ///////////////////////////////////////////////
+
+/* TEST LEILA = after click on login button, page is reloaded and loader animation from main component plays for on top of other components, meanwhile, loggedComponent is fading in (2s)
+*/
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#luluwrapper-whole {
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-name: fadeIn;
+}
+
 ///////////////////////////////////////////////
-
-// TEST LEILA = Animation for page reload after login
-
-// @keyframes fadeIn {
-//   0% {
-//     opacity: 0;
-//   }
-//   25% {
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// }
-
-// #luluwrapper-whole {
-//   animation-duration: 2s;
-//   animation-timing-function: ease-in-out;
-//   animation-delay: 0s;
-//   animation-name: fadeIn;
-// }
-
 
 
 

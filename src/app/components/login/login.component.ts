@@ -116,7 +116,6 @@ export class LoginComponent implements OnInit {
 
         // page needs to be reloaded to give time to refresh data state after login (reload with css animation)
         window.location.reload();
-
       },
       error: (err) => {
         this.errorState = true;
@@ -144,6 +143,5 @@ export class LoginComponent implements OnInit {
       this.passwordShow = false;
     }
   };
-
 
 }

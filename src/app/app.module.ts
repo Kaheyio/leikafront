@@ -31,8 +31,6 @@ import { LeikodeValidationComponent } from './components/logged/leikode-validati
 import { CrudService } from './services/crud.service';
 import { MainComponent } from './components/main/main.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +54,7 @@ import { MainComponent } from './components/main/main.component';
     UncheckedrejectedTransactionsComponent,
     IncomingTransactionsComponent,
     LeikodeValidationComponent,
-    MainComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

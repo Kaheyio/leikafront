@@ -21,9 +21,7 @@ export class LoggedComponent implements OnInit {
   constructor(private crudService: CrudService, private authGuardService: AuthGuardService, public dataService: DataService) { }
 
   ngOnInit(): void {
-
     this.getUserData();
-
   }
 
 

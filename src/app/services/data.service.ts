@@ -16,11 +16,11 @@ export class DataService {
 
   // BehaviorSubject (to share logged user data within the app)
   // user data
-  private $userData = new BehaviorSubject<any>('');
+  public $userData = new BehaviorSubject<any>('');
   userData = this.$userData.asObservable();
 
   // newly generated leikode (not hashed)
-  private $userLeikode = new BehaviorSubject<any>('');
+  public $userLeikode = new BehaviorSubject<any>('');
   userLeikode = this.$userLeikode.asObservable();
 
 
