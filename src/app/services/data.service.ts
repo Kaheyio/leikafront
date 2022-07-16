@@ -67,8 +67,6 @@ export class DataService {
   }
 
 
-
-
   // GETTER AND SETTERS TO SHARE USER DATA WITHIN THE APP
 
   getLoggedUserData(){
@@ -78,6 +76,8 @@ export class DataService {
   getLoggedUserLeikode(){
     return this.userLeikode;
   }
+
+  // get associated accounts, cards, transactions and beneficiaries
 
   // to send user data that was edited from components back to this service  
   setLoggedUserData(setUserData: any) {
