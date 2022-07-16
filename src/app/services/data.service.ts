@@ -52,6 +52,8 @@ export class DataService {
         }
       });
 
+        // get associated accounts, cards, transactions and beneficiaries
+
       // check if authToken cookie is stored/valid/expired
       this.crudService.getTypeRequest('/auth/protected/logged').subscribe(res => {
         // if status = false, authToken invalid
