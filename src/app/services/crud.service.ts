@@ -28,9 +28,15 @@ export class CrudService {
     }));
   };
 
-
+  // WE MUST USE PATCH METHOD TO USE MONGOOSE UPDATE METHODS ?
   putTypeRequest(url: any, payload: any) {
     return this.http.put(`${this.baseUrl}${url}`, payload, { withCredentials : true }).pipe(map(res => {
+      return res;
+    }));
+  };
+
+  patchTypeRequest(url: any, payload: any) {
+    return this.http.patch(`${this.baseUrl}${url}`, payload, { withCredentials : true }).pipe(map(res => {
       return res;
     }));
   };
