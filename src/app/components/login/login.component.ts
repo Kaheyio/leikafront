@@ -109,7 +109,7 @@ export class LoginComponent implements OnInit {
       this.authGuardService.setLoggedOutState(this.loggedOutState);
 
       // TODO: get rid of this log
-      console.log('user logged in : ' + this.user.username);
+      // console.log('user logged in : ' + this.user.username);
       
         // reset login form
         this.loginForm.reset();

@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Rubik', "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; font-family: 'Rubik', "Helvetica Neue", sans-serif;
+
+ }
 
 // ******************STYLES REFS*******************************************************************
 
@@ -49,6 +52,28 @@ body { margin: 0; font-family: 'Rubik', "Helvetica Neue", sans-serif; }
 
     --lulublue: #4d4deeaa;
 }
+
+
+////////// TEST SCROLLBAR LEILA
+ body {
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color:  var(--lulugold1) var(--lulubg);   /* scroll thumb and track */ 
+ }
+ body::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--lulubg);      /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--lulubg);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid var(--lulugold1);  /* creates padding around scroll thumb */
+  }
+  
+////////// END TEST SCROLLBAR LEILA
 
 .lulugrey{
     background-color: var(--lulugrey);

@@ -21,7 +21,7 @@
 -->
 
 <!-- TRANSACTION CARDS TEMPLATE-->
-<div>Today</div>
+<!-- <div>Today</div>
 <div class="luludayholder mb-3">
     <a *ngFor="let transaction of sortedhistorytoday"
         class="lulutransacard p-1 mt-1 d-flex flex-row justify-content-evenly align-items-center"
@@ -60,10 +60,10 @@
             </div>
         </div>
     </a>
-</div>
+</div> -->
 
 <!-- JUST A COPY -->
-<div>Yesterday</div>
+<!-- <div>Yesterday</div>
 <div class="luludayholder mb-3">
     <a *ngFor="let transaction of sortedhistorytoday"
         class="lulutransacard p-1 mt-1 d-flex flex-row justify-content-evenly align-items-center"
@@ -94,6 +94,52 @@
                     [ngClass]="{'lulugreentransaction' : !transaction.amountnegative, 'lulurejectedtransaction': transaction.transactionStatus=='Rejected'}">
                     <div class="d-flex flex-row mx-1">
                         {{ formatAmount(transaction.amount) }} &euro;
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="transaction.usernote" class="lulutransacard-usernote">
+                {{"→ " + (transaction.usernote | slice:0:100) + ".."}}
+            </div>
+        </div>
+    </a>
+</div> -->
+
+<!-- ONLY SHOW PAST TRANSACTIONS HERE (NOT REJECTED OR INCOMING!!!) -->
+
+<div class="luludayholder mb-3">
+    <a *ngFor="let transaction of sortedHistoryTransactions"
+        class="lulutransacard p-1 mt-1 d-flex flex-row justify-content-evenly align-items-center"
+        data-bs-toggle="offcanvas" data-bs-target="#transaction-details-canvas"
+        aria-controls="transaction-details-canvas">
+        <small class="fst-italic text-muted">{{formatDate(transaction.submissionDate)}}</small>
+        <!-- <img class="lulutransacard-logo p-2"
+            src="../../../../../../assets/categories/{{transaction.transactionStatus=='Rejected'?'Rejected-checked':!transaction.isAmountNegative?transaction.category+'white':transaction.category}}.ico"
+            alt="ico"> -->
+        <img class="lulutransacard-logo p-2"
+            src="../../../../../../assets/categories/{{transaction.category}}.ico"
+            alt="ico">
+        <div class="lulutransacard-text px-2 d-flex flex-column justify-content-center align-items-start">
+            <div class="lulutransacard-title" [ngClass]="{'lulurejectedtransaction': transaction.transactionStatus=='Rejected'}">
+                {{ (transaction.title.length>25) ? (transaction.title|slice:0:25)+'..' : (transaction.title) }}
+            </div>
+            <div class="lulutransacard-date-cardnb d-flex flex-row">
+                <div *ngIf="transaction.transactionType=='Card'">{{'Card **** ' + (transaction.transactionRef |
+                    slice:-4) }}</div>
+                <div *ngIf="transaction.transactionType=='Direct debit'">{{"SEPA " +
+                    transaction.transactionRef|slice:0:-17}}</div>
+                <!-- <div *ngIf="transaction.transactionType=='Direct credit'">{{"From: " +
+                    transaction.transactionRef|slice:0:-17}}</div> -->
+                <div *ngIf="transaction.transactionType=='Wire Transfer'">{{"To: " +
+                    transaction.transactionRef|slice:0:-17}}</div>
+            </div>
+            <div class="w-100 d-flex flex-row">
+                <div class="lulutransacard-category">
+                    {{(transaction.category | slice:0:30)}}
+                </div>
+                <div class="lulutransacard-price luluw40 ms-auto d-flex flex-row align-items-start justify-content-evenly"
+                    [ngClass]="{'lulugreentransaction' : !transaction.isAmountNegative}">
+                    <div class="d-flex flex-row mx-1">
+                        {{ transaction.amount | currency: 'EUR'}} 
                     </div>
                 </div>
             </div>

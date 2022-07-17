@@ -20,14 +20,19 @@ export class AccountpickerComponent implements OnInit {
 
   getAccounts() {
     // get user data from data service     
-    this.dataService.getLoggedUserData().subscribe(data => {
-      this.userData = data;
-      // console.log(this.userData._id);
+    // this.dataService.getLoggedUserData().subscribe(data => {
+    //   this.userData = data;
+    //   // console.log(this.userData._id);
+    //   // put params to string because the request doesn't take the objectId that is referenced from the schema !!!
+    //   // this.userId = this.userData._id.toString();
 
-      // put params to string because the request doesn't take the objectId that is referenced from the schema !!!
-      this.userId = this.userData._id.toString();
+    // });
 
-      this.crudService.getTypeRequest('/accounts/user/'+ this.userId).subscribe({
+    // TODO: check pb with getting user id from data service, is sometimes undefined
+    if (sessionStorage.getItem('leikaUID') && sessionStorage.getItem('leikaULK')) {
+      this.userId = sessionStorage.getItem('leikaUID');
+
+      this.crudService.getTypeRequest('/accounts/user/' + this.userId).subscribe({
         next: (res) => {
           this.accounts = res;
           // console.log(this.accounts);
@@ -37,7 +42,7 @@ export class AccountpickerComponent implements OnInit {
         }
       });
 
-    });
+    };
 
   }
 
