@@ -20,11 +20,11 @@ export class InterceptorServiceService {
       }
       // request = request.clone({ headers: request.headers.set('Accept', 'application/json'), withCredentials: true });
       // // TODO: use cookie method ???
-      // // .clone({
-      // //   setHeaders: {
-      // //     Authorization: `${this.crudService.getToken()}`
-      // //   }
-      // // })
+      // .clone({
+      //   setHeaders: {
+      //     Authorization: `${this.crudService.getToken()}`
+      //   }
+      // })
 
       // return next.handle(request);
 

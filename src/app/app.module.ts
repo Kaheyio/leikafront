@@ -65,7 +65,6 @@ import { MainComponent } from './components/main/main.component';
     ReactiveFormsModule,
     AuthModule
   ],
-  // TODO: TEST ROUTE PROTECTION WITH INTERCEPTOR SERVICE ?
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorServiceService,
