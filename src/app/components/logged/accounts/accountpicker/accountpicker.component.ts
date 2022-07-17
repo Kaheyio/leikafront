@@ -11,6 +11,7 @@ export class AccountpickerComponent implements OnInit {
 
   userData: any;
   accounts: any;
+  userId: any;
   constructor(private crudService: CrudService, private dataService: DataService) { }
 
   ngOnInit(): void {
@@ -21,14 +22,20 @@ export class AccountpickerComponent implements OnInit {
     // get user data from data service     
     this.dataService.getLoggedUserData().subscribe(data => {
       this.userData = data;
-      console.log(this.userData._id);
-      
-      //TODO: PB APP CRASH + CORS
-      // this.crudService.getTypeRequest('/accounts/user/'+ this.userData._id).subscribe(res => {
-      //   this.accounts = res;
-      //   console.log(this.accounts);
-        
-      // });
+      // console.log(this.userData._id);
+
+      // put params to string because the request doesn't take the objectId that is referenced from the schema !!!
+      this.userId = this.userData._id.toString();
+
+      this.crudService.getTypeRequest('/accounts/user/'+ this.userId).subscribe({
+        next: (res) => {
+          this.accounts = res;
+          // console.log(this.accounts);
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
 
     });
 

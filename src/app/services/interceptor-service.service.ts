@@ -11,27 +11,42 @@ export class InterceptorServiceService {
   constructor(private crudService: CrudService) { }
 
 
-// TODO: CHECK IF WE REALLY NEED IT???
+  // TODO: CHECK IF WE REALLY NEED IT???
   intercept(request: HttpRequest<any>,
     next: HttpHandler
-    ): Observable<HttpEvent<any>> {
-      if (!request.headers.has('Content-Type')) {
-        request = request.clone({ headers: request.headers.set('Content-Type', 'application/json'), withCredentials: true });
-      }
-      // request = request.clone({ headers: request.headers.set('Accept', 'application/json'), withCredentials: true });
-      // // TODO: use cookie method ???
-      // .clone({
-      //   setHeaders: {
-      //     Authorization: `${this.crudService.getToken()}`
-      //   }
-      // })
-
-      // return next.handle(request);
-
-      request = request.clone({ headers: request.headers.set('Accept', 'application/json'), withCredentials: true });
+  ): Observable<HttpEvent<any>> {
+    if (!request.headers.has('Content-Type')) {
+      // request = request.clone({ headers: request.headers.set('Content-Type', 'application/json'), withCredentials: true });
+      request = request.clone({
+        setHeaders: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        withCredentials: true
+      });
       
-      return next.handle(request);
     }
+    // request = request.clone({ headers: request.headers.set('Accept', 'application/json'), withCredentials: true });
+    // // TODO: use cookie method ???
+    // .clone({
+    //   setHeaders: {
+    //     Authorization: `${this.crudService.getToken()}`
+    //   }
+    // })
+
+    // return next.handle(request);
+
+    request = request.clone({
+      setHeaders: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      withCredentials: true
+    });
+
+
+    return next.handle(request);
+  }
 
 
 }

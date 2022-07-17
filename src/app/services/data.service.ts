@@ -59,6 +59,7 @@ export class DataService {
         // if status = false, authToken invalid
         this.authTokenValid = Object.values(res)[0];
         // console.log(this.authTokenValid);
+        
 
         if (this.authTokenValid !== true) {
           console.log('Token is invalid');
