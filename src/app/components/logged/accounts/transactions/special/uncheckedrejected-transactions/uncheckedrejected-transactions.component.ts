@@ -10,107 +10,6 @@ import { LuluFormatFunctions } from 'src/app/shared/lulu-functions';
 })
 export class UncheckedrejectedTransactionsComponent implements OnInit {
 
- // transform into object that from transactionservice gets all transactions with status rejected AND property checked false
-
-  // uncheckedrejectedtransactions = [
-  //   { // Rejected CB paiement
-  //     title: "Amazon Payements Europe S",
-  //     amount: "129.99",
-  //     amountnegative: true,
-  //     submissionDate: "1656594363",
-  //     accountRef: "AD1200012030200359100100",
-  //     transactionType: "Card",
-  //     transactionRef: "5514040338055704",
-  //     targetAccount: "",
-  //     transactionStatus: "Rejected",
-
-  //     userValidationStatus: "Validated",
-
-  //     bankValidationStatus: false,
-
-  //     estimatedDate: "1656594361",
-
-  //     category: "",
-
-  //     rejectionReason: "Insufficient funds.",
-
-  //     onlinestatus: true,
-  //     usernote: ""
-  //   },
-  //   { // Rejected CB paiement
-  //     title: "Amazon Payements Europe S",
-  //     amount: "129.99",
-  //     amountnegative: true,
-  //     submissionDate: "1656594363",
-  //     accountRef: "AD1200012030200359100100",
-  //     transactionType: "Card",
-  //     transactionRef: "5514040338055704",
-  //     targetAccount: "",
-  //     transactionStatus: "Rejected",
-
-  //     userValidationStatus: "Validated",
-
-  //     bankValidationStatus: false,
-
-  //     estimatedDate: "1656594361",
-
-  //     category: "",
-
-  //     rejectionReason: "Insufficient funds.",
-
-  //     onlinestatus: true,
-  //     usernote: ""
-  //   },
-  //   { // Rejected CB paiement
-  //     title: "Amazon Payements Europe S",
-  //     amount: "129.99",
-  //     amountnegative: true,
-  //     submissionDate: "1656594363",
-  //     accountRef: "AD1200012030200359100100",
-  //     transactionType: "Card",
-  //     transactionRef: "5514040338055704",
-  //     targetAccount: "",
-  //     transactionStatus: "Rejected",
-
-  //     userValidationStatus: "Validated",
-
-  //     bankValidationStatus: false,
-
-  //     estimatedDate: "1656594361",
-
-  //     category: "",
-
-  //     rejectionReason: "Insufficient funds.",
-
-  //     onlinestatus: true,
-  //     usernote: ""
-  //   },
-  //   { // Rejected CB paiement
-  //     title: "Amazon Payements Europe S",
-  //     amount: "129.99",
-  //     amountnegative: true,
-  //     submissionDate: "1656594363",
-  //     accountRef: "AD1200012030200359100100",
-  //     transactionType: "Card",
-  //     transactionRef: "5514040338055704",
-  //     targetAccount: "",
-  //     transactionStatus: "Rejected",
-
-  //     userValidationStatus: "Validated",
-
-  //     bankValidationStatus: false,
-
-  //     estimatedDate: "1656594361",
-
-  //     category: "",
-
-  //     rejectionReason: "Insufficient funds.",
-
-  //     onlinestatus: true,
-  //     usernote: ""
-  //   },
-  // ]
-
   sortedRejectedTransactions: any;
   accounts: any;
   userData: any;
@@ -121,9 +20,6 @@ export class UncheckedrejectedTransactionsComponent implements OnInit {
   ngOnInit(): void {
     this.getSortedRejectedTransactions();
   }
-
-  // LULU through databaseCRUDservice, change transaction "checked" property to true
-  // LULU checkedrejected(){}
 
 getSortedRejectedTransactions(){
   // this.dataService.getLoggedUserData().subscribe({
