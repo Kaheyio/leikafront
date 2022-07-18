@@ -23,16 +23,21 @@ export class DataService {
   public $userLeikode = new BehaviorSubject<any>('');
   userLeikode = this.$userLeikode.asObservable();
 
+  public $userAccounts = new BehaviorSubject<any>('');
+  userAccounts = this.$userAccounts.asObservable();
+  public $userTransactions = new BehaviorSubject<any>('');
+  userTransactions = this.$userTransactions.asObservable();
+
 
 
   constructor(private crudService: CrudService) {
     this.shareData();
   }
 
-  shareData(){
+  shareData() {
     /* get user id and leikode that were put in session storage on login
      [NB: to keep data displayed if page is refreshed] */
-     if (sessionStorage.getItem('leikaUID') && sessionStorage.getItem('leikaULK')) {
+    if (sessionStorage.getItem('leikaUID') && sessionStorage.getItem('leikaULK')) {
 
       this.userId = sessionStorage.getItem('leikaUID');
       this.$userLeikode.next(sessionStorage.getItem('leikaULK'));
@@ -52,11 +57,15 @@ export class DataService {
         }
       });
 
+      // get associated accounts, transactions, cards and beneficiaries
+      // put params to string because the request doesn't take the objectId that is referenced from the schema !!!
+      
       // check if authToken cookie is stored/valid/expired
       this.crudService.getTypeRequest('/auth/protected/logged').subscribe(res => {
         // if status = false, authToken invalid
         this.authTokenValid = Object.values(res)[0];
         // console.log(this.authTokenValid);
+
 
         if (this.authTokenValid !== true) {
           console.log('Token is invalid');
@@ -67,23 +76,47 @@ export class DataService {
   }
 
 
-
-
   // GETTER AND SETTERS TO SHARE USER DATA WITHIN THE APP
 
-  getLoggedUserData(){
+  getLoggedUserData() {
     return this.userData;
   }
 
-  getLoggedUserLeikode(){
+  getLoggedUserLeikode() {
     return this.userLeikode;
   }
+
+  // get associated accounts, transactions, cards and beneficiaries
+  getLoggedUserAccounts() {
+    return this.userAccounts;
+  }
+
+  getLoggedUserTransactions() {
+    return this.$userTransactions;
+  }
+
+  // getLoggedUserCards(){
+
+  // }
+
+
 
   // to send user data that was edited from components back to this service  
   setLoggedUserData(setUserData: any) {
     this.$userData.next(setUserData);
   }
 
+  setLoggedUserAccounts(payload: any) {
+    this.$userAccounts.next(payload);
+  }
+
+  setLoggedUserTransactions(payload: any) {
+    this.$userTransactions.next(payload);
+  }
+
+  // setLoggedUserCards(){
+
+  // }
 
   // CLEAR DATA
   // clear user data and leikode from session storage
@@ -92,7 +125,7 @@ export class DataService {
   }
 
   // clear user data on log out
-  clearUserData(){
+  clearUserData() {
     this.$userData.next("");
     this.$userLeikode.next("");
   }

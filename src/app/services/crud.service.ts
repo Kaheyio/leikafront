@@ -7,6 +7,7 @@ import { map} from 'rxjs';
 })
 export class CrudService {
 
+  // baseUrl = 'http://localhost:3000/api';
 
   // backend route prefix (add /users or /auth in components) 
   baseUrl = 'https://leikaback.herokuapp.com/api';
@@ -28,9 +29,15 @@ export class CrudService {
     }));
   };
 
-
+  // WE MUST USE PATCH METHOD TO USE MONGOOSE UPDATE METHODS ?
   putTypeRequest(url: any, payload: any) {
     return this.http.put(`${this.baseUrl}${url}`, payload, { withCredentials : true }).pipe(map(res => {
+      return res;
+    }));
+  };
+
+  patchTypeRequest(url: any, payload: any) {
+    return this.http.patch(`${this.baseUrl}${url}`, payload, { withCredentials : true }).pipe(map(res => {
       return res;
     }));
   };

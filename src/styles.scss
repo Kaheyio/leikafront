@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Rubik', "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; font-family: 'Rubik', "Helvetica Neue", sans-serif;
+
+ }
 
 // ******************STYLES REFS*******************************************************************
 
@@ -10,11 +13,15 @@ body { margin: 0; font-family: 'Rubik', "Helvetica Neue", sans-serif; }
 
 :root{
     --luluultrablack: #1a1e21;
+    --luluvampireblack: #080808;
     --lulubg: #212529;
     --lulubg2: #393d42;
+    // --lulugradientblack: linear-gradient(315deg, #130f40 0%, #000000 74%);;
+    --lulugradientgoldblack: linear-gradient(360deg, #4d3904 0%, #000000 44%);;
     --luluclear: #fbfdff;
     --lulugrey: #C3C0C0ff;
     --lulugold: rgb(224, 182, 66);
+    --luludarkgold: #4d3904;
 
     --lulucardborder: #dddada;
 
@@ -50,6 +57,28 @@ body { margin: 0; font-family: 'Rubik', "Helvetica Neue", sans-serif; }
     --lulublue: #4d4deeaa;
 }
 
+
+////////// TEST SCROLLBAR LEILA
+ body {
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color:  var(--lulugold1) var(--luluvampireblack);   /* scroll thumb and track */ 
+ }
+ body::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--luluvampireblack);      /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--luluvampireblack);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid var(--lulugold1);  /* creates padding around scroll thumb */
+  }
+  
+////////// END TEST SCROLLBAR LEILA
+
 .lulugrey{
     background-color: var(--lulugrey);
 }
@@ -62,7 +91,12 @@ body { margin: 0; font-family: 'Rubik', "Helvetica Neue", sans-serif; }
 .luluultrablack{
     background-color: var(--luluultrablack);
 }
-
+.luluvampireblack{
+    background-color: var(--luluvampireblack);
+}
+.lulugradientgoldblack{
+    background: var(--lulugradientgoldblack);
+}
 .lulugreytxt{
     color: var(--lulugrey) !important;
 }
@@ -169,4 +203,7 @@ a{
     background-image: linear-gradient(280deg, #000000 0%, #434343 99%);
 }
 
-// Test gradient leila blue whale
+// Test btn
+.btn-dark, .bg-dark{
+    background-color: var(--luluvampireblack) !important;
+}

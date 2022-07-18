@@ -17,8 +17,6 @@ import { TransactionsComponent } from './components/logged/accounts/transactions
 import { SpecialComponent } from './components/logged/accounts/transactions/special/special.component';
 import { HistoryTransactionsComponent } from './components/logged/accounts/transactions/history-transactions/history-transactions.component';
 import { AccountpickerComponent } from './components/logged/accounts/accountpicker/accountpicker.component';
-import { CardsComponent } from './components/logged/accounts/cards/cards.component';
-import { StatsComponent } from './components/logged/accounts/stats/stats.component';
 import { InterceptorServiceService } from './services/interceptor-service.service';
 import { NewMoveComponent } from './components/logged/transfer/new-move/new-move.component';
 import { ManageReceiversComponent } from './components/logged/transfer/manage-receivers/manage-receivers.component';
@@ -30,6 +28,9 @@ import { IncomingTransactionsComponent } from './components/logged/accounts/tran
 import { LeikodeValidationComponent } from './components/logged/leikode-validation/leikode-validation.component';
 import { CrudService } from './services/crud.service';
 import { MainComponent } from './components/main/main.component';
+import { CardsComponent } from './components/logged/accounts/cards/cards.component';
+import { StatsComponent } from './components/logged/accounts/stats/stats.component';
+import { DocumentsComponent } from './components/logged/manage/documents/documents.component';
 
 @NgModule({
   declarations: [
@@ -44,8 +45,6 @@ import { MainComponent } from './components/main/main.component';
     SpecialComponent,
     HistoryTransactionsComponent,
     AccountpickerComponent,
-    CardsComponent,
-    StatsComponent,
     TransactionDetailsComponent,
     NewMoveComponent,
     ManageReceiversComponent,
@@ -54,7 +53,10 @@ import { MainComponent } from './components/main/main.component';
     UncheckedrejectedTransactionsComponent,
     IncomingTransactionsComponent,
     LeikodeValidationComponent,
-    MainComponent
+    MainComponent,
+    CardsComponent,
+    StatsComponent,
+    DocumentsComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,6 @@ import { MainComponent } from './components/main/main.component';
     ReactiveFormsModule,
     AuthModule
   ],
-  // TODO: TEST ROUTE PROTECTION WITH INTERCEPTOR SERVICE ?
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorServiceService,

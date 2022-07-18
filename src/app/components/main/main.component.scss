@@ -7,8 +7,7 @@
     height: 100vh;
     width: 100%;
 
-    // TODO: or --luluclear ? or gradient black ?
-    background-color: var(--lulublack);
+    background: var(--lulugradientgoldblack);
 
     position: absolute;
     top: 50%;
@@ -19,7 +18,7 @@
 }
 
 .loader {
-    border: 8px solid var(--lulubg2);
+    border: 8px solid var(--luluclear);
     border-radius: 50%;
     border-top: 8px solid var(--lulugold);
     width: 100px;

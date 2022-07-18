@@ -1,1 +1,17 @@
-<p>cards works!</p>
+<!-- TODO: add container -->
+<div class="d-flex justify-content-evenly mx-0">
+    <div class="col-sm-4" *ngFor="let ac of accountCards">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{'Card **** '+(ac.cardNumber | slice:-4)}}</h5>
+          <p class="card-text">Card holder: {{ac.cardHolder.username}}</p>
+          <i class="fa-brands fa-cc-visa fs-1" *ngIf="ac.paymentNetwork == 'Visa'"></i>
+          <i class="fa-brands fa-cc-mastercard fs-1" *ngIf="ac.paymentNetwork == 'Mastercard'"></i>          
+          <i class="fa-brands fa-cc-amex fs-1" *ngIf="ac.paymentNetwork == 'American Express'"></i>
+          <p class="card-text fw-bolder mt-3">Expiration date: {{formatDate(ac.expirationDate)}}</p>
+          <span>Status:</span>
+          <p class="card-text" [ngClass]="(ac.cardStatus == 'Valid' ? 'lulugreentransaction' : 'text-danger')">{{ac.cardStatus}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
