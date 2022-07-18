@@ -11,6 +11,8 @@ import { LuluFormatFunctions } from 'src/app/shared/lulu-functions';
 export class HistoryTransactionsComponent implements OnInit {
 
   sortedHistoryTransactions: any;
+  //TODO erase
+  sortedHistoryTransactions2: any;
   accounts: any;
   userData: any;
   userId: any;
@@ -51,6 +53,8 @@ export class HistoryTransactionsComponent implements OnInit {
             this.crudService.getTypeRequest('/transactions/account/' + this.accountRef + '/status/Past').subscribe({
               next: (res) => {
                 this.sortedHistoryTransactions = res;
+                // TODO erase
+                this.sortedHistoryTransactions2 = this.sortedHistoryTransactions;
                 // console.log(this.sortedHistoryTransactions);
 
               },
