@@ -9,12 +9,25 @@ import html2canvas from 'html2canvas';
 export class DocumentsComponent implements OnInit {
 
   @ViewChild('BISSheet') BISSheet!: ElementRef;
+
+  // TODO: get data from db
+  accountData = {
+    branchCode: "56898",
+    counterCode: "01258",
+    accountNumber: "1249787T413",
+    keyBIS: "46",
+    domiciliation: "LEIKA BANK MARSEILLE FINANCIAL CENTRE",
+    accountIBAN: "FR452006789625985172T25516",
+    accountBIC: "PSSTFRPPMAR",
+    userName: "Thomas Gold",
+    address: ["85 bd de Monteux", "13005 Marseille", "FRANCE"]
+  }
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  // TODO: GET CREDIT ACCOUNT DATA
   public generatePDF(): void {
 
     html2canvas(this.BISSheet.nativeElement, { scale: 3 }).then((canvas) => {
@@ -26,6 +39,8 @@ export class DocumentsComponent implements OnInit {
       PDF.html(this.BISSheet.nativeElement.innerHTML)
       PDF.save('angular-invoice-pdf-demo.pdf');
     });
-  }
+  };
+
+  
 
 }
