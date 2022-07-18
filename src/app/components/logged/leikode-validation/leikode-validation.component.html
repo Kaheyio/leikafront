@@ -8,18 +8,19 @@
                         aria-label="Password input for leikode with checkbox" placeholder="Your Leikode"
                         name="leikode" #togglePassword> 
                         <!-- formControlName="leikode" -->
-                    <label for="leikodeinput" id="leikodeinputlabel">Leikode here</label>
+                    <label for="leikodeinput" id="leikodeinputlabel">Insert your Leikode</label>
                 </div>
                 <div class="input-group-text">
                     <!-- TODOLULU make togglePW() universal -->
-                    <i class="fa-solid fa-eye-slash"></i>
+                    <!-- <i class="fa-solid fa-eye-slash"></i> -->
                     <!--*ngIf="passwordShow" (click)="togglePW()"-->
                     <!-- <i *ngIf="!passwordShow" class="fa-solid fa-eye"></i>  -->
+                    <i class="fa-solid fa-eye"></i> 
                 </div>
             </div>
             <div class="w-100 my-2 text-center text-danger fw-bold">
                 <!-- *ngIf="errorState"  -->
-                Error, please input valid leikode.
+                <!-- Error, please input valid leikode. -->
                 <!-- {{ errorMessage }} -->
             </div>
             <div class="w-100 d-flex justify-content-around">

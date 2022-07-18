@@ -1,57 +1,100 @@
 <!-- TEST EDIT BANK ID STATEMENT -->
 <!-- img + cards or table -->
 <!-- TODO: GET CREDIT ACCOUNT DATA -->
-<div class="container" id="BISSheet" #BISSheet>
+<div class="container-sm" id="BISSheet" #BISSheet>
   <img class="img-fluid rounded mb-4" src="../../../../../assets/logohoriz.png" alt="leika logo" width="100"
     height="auto">
 
-    <h3>Bank Id Statement</h3>
-  <div class="text-center">
-
-    <table class="table table-striped">
-      <thead class="table-dark">
-        <tr>
-          <th scope="col">Branch Code</th>
-          <th scope="col">Counter Code</th>
-          <th scope="col">Account Number</th>
-          <th scope="col">BIS Key</th>
-          <th scope="col">Domiciliation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Mark</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <td colspan="6">
-            <table class="table mb-0">
-              <thead>
-                <tr>
-                  <th scope="col">Account IBAN</th>
-                  <th scope="col">Account BIC</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Mark</td>
-                  <td>Mark</td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="m-0">Account Holder: </p>
-    <address>
-      User Address
-    </address>
+  <h6 class="text-center mb-3">Bank Id Statement</h6>
+<div class="table-responsive">
+  <table class="table">
+    <thead class="luluvampireblack text-white">
+      <tr>
+        <th scope="col">Branch Code</th>
+        <th scope="col">Counter Code</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr>
+        <td>{{accountData.branchCode}}</td>
+        <td>{{accountData.counterCode}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<!-- TODO: PREVENT BUTTON FROM DISAPPEARING -->
-<button class="btn luluvampireblack bg-dark text-white mt-5" (click)="generatePDF()">Generate PDF</button>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead class="luluvampireblack text-white">
+      <tr>
+        <th scope="col">Account Number</th>
+        <th scope="col">BIS Key</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr>
+        <td>{{accountData.accountNumber}}</td>
+        <td>{{accountData.keyBIS}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead class="luluvampireblack text-white">
+      <tr>
+        <th scope="col">Currency</th>
+        <th scope="col">Domiciliation</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr>
+        <td>&euro;</td>
+        <td>{{accountData.domiciliation}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead class="">
+      <tr>
+        <th scope="col">IBAN</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr>
+        <td>{{accountData.accountIBAN}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead class="">
+      <tr>
+        <th scope="col">BIC</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr>
+        <td>{{accountData.accountBIC}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  <p class="m-0">Account Holder: {{accountData.userName}}</p>
+  <address class="d-flex flex-column">
+    <span class="fst-italic" *ngFor="let f of accountData.address">
+      {{f}}
+    </span>
+   
+  </address>
+
+  <button class="btn luluvampireblack bg-dark text-white mt-5" (click)="generatePDF()">Generate PDF</button>
+</div>
+
 <!-- END TEST EDIT BANK ID STATEMENT -->
