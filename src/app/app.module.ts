@@ -30,6 +30,7 @@ import { CrudService } from './services/crud.service';
 import { MainComponent } from './components/main/main.component';
 import { CardsComponent } from './components/logged/accounts/cards/cards.component';
 import { StatsComponent } from './components/logged/accounts/stats/stats.component';
+import { DocumentsComponent } from './components/logged/manage/documents/documents.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { StatsComponent } from './components/logged/accounts/stats/stats.compone
     LeikodeValidationComponent,
     MainComponent,
     CardsComponent,
-    StatsComponent
+    StatsComponent,
+    DocumentsComponent
   ],
   imports: [
     BrowserModule,
