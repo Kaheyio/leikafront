@@ -88,7 +88,7 @@ export class HistoryTransactionsComponent implements OnInit {
 
   //     category: "",
 
-  //     rejectionReason: "",
+  //     rejectionReason: "Insufficient funds.",
 
   //     onlinestatus: true,
   //     usernote: ""

@@ -46,7 +46,7 @@
             </div>
             <div class="w-100 d-flex flex-row">
                 <div class="lulutransacard-category">
-                    {{(transaction.category | slice:0:30)}}
+                    {{transaction.transactionStatus=='Rejected'?transaction.rejectionReason:(transaction.category | slice:0:30)}}
                 </div>
                 <div class="lulutransacard-price luluw40 ms-auto d-flex flex-row align-items-start justify-content-evenly"
                     [ngClass]="{'lulugreentransaction' : !transaction.amountnegative, 'lulurejectedtransaction': transaction.transactionStatus=='Rejected'}">
@@ -85,10 +85,10 @@
                     transaction.transactionRef|slice:0:-17}}</div>
                 <div *ngIf="transaction.transactionType=='Wire transfer'">{{"To: " +
                     transaction.transactionRef|slice:0:-17}}</div>
-            </div>
+            </div>            
             <div class="w-100 d-flex flex-row">
                 <div class="lulutransacard-category">
-                    {{(transaction.category | slice:0:30)}}
+                    {{transaction.transactionStatus=='Rejected'?transaction.rejectionReason:(transaction.category | slice:0:30)}}
                 </div>
                 <div class="lulutransacard-price luluw40 ms-auto d-flex flex-row align-items-start justify-content-evenly"
                     [ngClass]="{'lulugreentransaction' : !transaction.amountnegative, 'lulurejectedtransaction': transaction.transactionStatus=='Rejected'}">
