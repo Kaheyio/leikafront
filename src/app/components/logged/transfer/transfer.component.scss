@@ -1,32 +1,16 @@
-// ******************TRANSFER COMPONENT *******************************************************************
-.offcanvas{
-    width: 100vw;
+//////////////////// Section picker
+#lulusectionpicker-newmove {
+    overflow-x: scroll;
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
 }
-#moveshistory{
-    margin: 0 auto;
-    
+#lulusectionpicker-newmove .nav-link{
+    color: var(--lulugrey4);
+    background-color: #e9ecef;
+    border-radius: 0px;
 }
-#moveshistorycards{
-    overflow-y: scroll;
-}
-.lulumovecard{
-    text-decoration: none;
+#lulusectionpicker-newmove .nav-link.active {
+    background-color: inherit; //#e9ecef
     color: black;
-    max-height: 90px;
-    
-    font-size: 0.7rem;
-    border-left: 1px solid var(--lulugrey4);
-}
-.lulumovecard div{
-    border-radius: 3px;
-}
-.lulumovecard-amount{
-    font-size: 0.8rem;
-}
-.lulumovecard-title{
-    font-size: 0.9rem;
-}
-
-#luluoverflow{
-    overflow-y: scroll;
+    border-radius: 0px;
+    border-bottom: 2px solid black;
 }

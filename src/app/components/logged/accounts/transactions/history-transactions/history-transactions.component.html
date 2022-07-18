@@ -25,7 +25,6 @@
         class="lulutransacard p-1 mt-1 d-flex flex-row justify-content-evenly align-items-center"
         data-bs-toggle="offcanvas" data-bs-target="#transaction-details-canvas"
         aria-controls="transaction-details-canvas">
-        <small class="fst-italic text-muted">{{formatDate(transaction.submissionDate)}}</small>
         <!-- <img class="lulutransacard-logo p-2"
             src="../../../../../../assets/categories/{{transaction.transactionStatus=='Rejected'?'Rejected-checked':!transaction.isAmountNegative?transaction.category+'white':transaction.category}}.ico"
             alt="ico"> -->
@@ -36,15 +35,20 @@
                 [ngClass]="{'lulurejectedtransaction': transaction.transactionStatus=='Rejected'}">
                 {{ (transaction.title.length>25) ? (transaction.title|slice:0:25)+'..' : (transaction.title) }}
             </div>
-            <div class="lulutransacard-date-cardnb d-flex flex-row">
-                <div *ngIf="transaction.transactionType=='Card'">{{'Card **** ' + (transaction.transactionRef |
-                    slice:-4) }}</div>
-                <div *ngIf="transaction.transactionType=='Direct debit'">{{"SEPA " +
+            <div class="w-100 d-flex flex-row">
+                <div class="me-2">
+                    {{formatDate(transaction.submissionDate)|slice:0:-5}}
+                </div>
+                <div class="lulutransacard-date-cardnb d-flex flex-row">
+                    <div *ngIf="transaction.transactionType=='Card'">{{'Card **** ' + (transaction.transactionRef |
+                        slice:-4) }}</div>
+                    <div *ngIf="transaction.transactionType=='Direct debit'">{{"SEPA " +
+                        transaction.transactionRef|slice:0:-17}}</div>
+                    <div *ngIf="transaction.transactionType=='Direct credit'">{{"From: " +
                     transaction.transactionRef|slice:0:-17}}</div>
-                <!-- <div *ngIf="transaction.transactionType=='Direct credit'">{{"From: " +
-                    transaction.transactionRef|slice:0:-17}}</div> -->
-                <div *ngIf="transaction.transactionType=='Wire Transfer'">{{"To: " +
-                    transaction.transactionRef|slice:0:-17}}</div>
+                    <div *ngIf="transaction.transactionType=='Wire Transfer'">{{"Ref: " +
+                        transaction.transactionRef|slice:0:-17}}</div>
+                </div>
             </div>
             <div class="w-100 d-flex flex-row">
                 <div class="lulutransacard-category">

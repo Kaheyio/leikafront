@@ -47,12 +47,12 @@
     <!-- Tab Displayer -->
     <div class="h-100 tab-content">
       <!-- Accounts tab -->
-      <div class="h-100 tab-pane fade show active" id="accountcomponent-displayer" role="tabpanel"
+      <div class="h-100 tab-pane fade" id="accountcomponent-displayer" role="tabpanel"
         aria-labelledby="accountcomponent-btn" tabindex="0">
         <app-accounts></app-accounts>
       </div>
       <!-- Transfer tab -->
-      <div class="h-100 tab-pane fade " id="transfercomponent-displayer" role="tabpanel"
+      <div class="h-100 tab-pane fade show active" id="transfercomponent-displayer" role="tabpanel"
         aria-labelledby="transfercomponent-btn" tabindex="0">
         <app-transfer></app-transfer>
       </div>
@@ -70,7 +70,7 @@
       id="lulubottomnav" role="tablist">
       <!-- Accounts btn -->
       <li class="luluw33 h-100 nav-item d-flex flex-column justify-content-center" role="presentation">
-        <button class="lulugreytxt h-100 nav-link d-flex flex-column align-items-center justify-content-evenly active"
+        <button class="lulugreytxt h-100 nav-link d-flex flex-column align-items-center justify-content-evenly"
           id="accountcomponent-btn" data-bs-toggle="pill" data-bs-target="#accountcomponent-displayer" type="button"
           role="tab" aria-controls="accountcomponent-displayer" aria-selected="true">
           <i class="my-1 fa-solid fa-xl fa-chart-simple"></i>
@@ -78,7 +78,7 @@
       </li>
       <!-- Transfers btn -->
       <li class="luluw33 h-100 nav-item d-flex flex-column justify-content-center" role="presentation">
-        <button class="lulugreytxt h-100 nav-link d-flex flex-column align-items-center justify-content-evenly"
+        <button class="lulugreytxt h-100 nav-link d-flex flex-column align-items-center justify-content-evenly active"
           id="transfercomponent-btn" data-bs-toggle="pill" data-bs-target="#transfercomponent-displayer" type="button"
           role="tab" aria-controls="transfercomponent-displayer" aria-selected="false">
           <i class="fs-4 fa-solid fa-arrow-right-arrow-left"></i>

@@ -19,7 +19,7 @@ import { HistoryTransactionsComponent } from './components/logged/accounts/trans
 import { AccountpickerComponent } from './components/logged/accounts/accountpicker/accountpicker.component';
 import { InterceptorServiceService } from './services/interceptor-service.service';
 import { NewMoveComponent } from './components/logged/transfer/new-move/new-move.component';
-import { ManageReceiversComponent } from './components/logged/transfer/manage-receivers/manage-receivers.component';
+import { BeneficiariesComponent } from './components/logged/transfer/beneficiaries/beneficiaries.component';
 import { ManageComponent } from './components/logged/manage/manage.component';
 import { TransactionDetailsComponent } from './components/logged/accounts/transactions/transaction-details/transaction-details.component';
 import { PendingLeikodeTransactionsComponent } from './components/logged/accounts/transactions/special/pending-leikode-transactions/pending-leikode-transactions.component';
@@ -31,6 +31,7 @@ import { MainComponent } from './components/main/main.component';
 import { CardsComponent } from './components/logged/accounts/cards/cards.component';
 import { StatsComponent } from './components/logged/accounts/stats/stats.component';
 import { DocumentsComponent } from './components/logged/manage/documents/documents.component';
+import { MovesHistoryComponent } from './components/logged/transfer/moves-history/moves-history.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { DocumentsComponent } from './components/logged/manage/documents/documen
     AccountpickerComponent,
     TransactionDetailsComponent,
     NewMoveComponent,
-    ManageReceiversComponent,
+    BeneficiariesComponent,
     ManageComponent,
     PendingLeikodeTransactionsComponent,
     UncheckedrejectedTransactionsComponent,
@@ -56,7 +57,8 @@ import { DocumentsComponent } from './components/logged/manage/documents/documen
     MainComponent,
     CardsComponent,
     StatsComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    MovesHistoryComponent
   ],
   imports: [
     BrowserModule,
