@@ -1,7 +1,7 @@
 <!-- TEST EDIT BANK ID STATEMENT -->
 <!-- img + cards or table -->
-
-<div class="container">
+<!-- TODO: GET CREDIT ACCOUNT DATA -->
+<div class="container" id="BISSheet" #BISSheet>
   <img class="img-fluid rounded mb-4" src="../../../../../assets/logohoriz.png" alt="leika logo" width="100"
     height="auto">
 
@@ -52,6 +52,6 @@
       User Address
     </address>
 </div>
-<button class="btn luluvampireblack text-white mt-5" >Generate PDF</button>
-<!-- (click)="generatePDF()" -->
+<!-- TODO: PREVENT BUTTON FROM DISAPPEARING -->
+<button class="btn luluvampireblack text-white mt-5" (click)="generatePDF()">Generate PDF</button>
 <!-- END TEST EDIT BANK ID STATEMENT -->
