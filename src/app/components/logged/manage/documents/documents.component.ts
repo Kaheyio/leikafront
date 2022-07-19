@@ -34,10 +34,12 @@ export class DocumentsComponent implements OnInit {
       const imageGeneratedFromTemplate = canvas.toDataURL('image/png');
       const fileWidth = 200;
       const generatedImageHeight = (canvas.height * fileWidth) / canvas.width;
-      let PDF = new jsPDF('p', 'mm', 'a4',);
+      let PDF = new jsPDF('p', 'px', 'a4',);
       PDF.addImage(imageGeneratedFromTemplate, 'PNG', 0, 5, fileWidth, generatedImageHeight,);
+      PDF.setFontSize(11);
+      PDF.addPage("a4", "p"); //just in case there's an cut in the page
       PDF.html(this.BISSheet.nativeElement.innerHTML)
-      PDF.save('angular-invoice-pdf-demo.pdf');
+      PDF.save('leikaBIS.pdf');
     });
   };
 
