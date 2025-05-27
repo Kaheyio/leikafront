@@ -23,7 +23,12 @@ export class AuthGuardService {
   }
 
   // CHECK LOGGED STATE AND PROTECT LOGGED COMPONENTS
-  checkLoggedState(){
+  checkLoggedState() {
+
+    // // LULU ADDED THESE TWO LINES to remove login
+    // this.setLoggedInState(true);
+    // this.setLoggedOutState(false);
+
     // check that session storage is not empty and token is valid ( = logged components are protected)
     this.crudService.getTypeRequest('/auth/protected/logged').subscribe(res => {
 
@@ -72,10 +77,10 @@ export class AuthGuardService {
 
 
   // FOR TESTS
-  getLoggedIn(){
+  getLoggedIn() {
     return this.isLoggedIn;
   }
-  getLoggedOut(){
+  getLoggedOut() {
     return this.isLoggedOut;
   }
 
